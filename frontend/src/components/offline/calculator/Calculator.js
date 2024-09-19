@@ -1,0 +1,83 @@
+import React, { useState } from 'react';
+
+const Calculator = () => {
+    const [input, setInput] = useState('');  // Stores the input from the user
+
+    const handleClick = (value) => {
+        setInput(input + value);  // Add clicked value to the input string
+    };
+
+    const clearInput = () => {
+        setInput('');  // Clears the input
+    };
+
+    const calculateResult = () => {
+        try {
+            setInput(eval(input).toString());  // Evaluate the expression
+        } catch (error) {
+            setInput('Error');  // If an error occurs (like invalid input), show "Error"
+        }
+    };
+
+    return (
+        <div style={styles.calculator}>
+            <div style={styles.display}>
+                <h1>{input || "0"}</h1>  {/* Displays current input or 0 */}
+            </div>
+            <div style={styles.buttons}>
+                <button onClick={clearInput} style={styles.button}>C</button>
+                <button onClick={() => handleClick('/')} style={styles.button}>/</button>
+                <button onClick={() => handleClick('*')} style={styles.button}>*</button>
+                <button onClick={() => handleClick('7')} style={styles.button}>7</button>
+                <button onClick={() => handleClick('8')} style={styles.button}>8</button>
+                <button onClick={() => handleClick('9')} style={styles.button}>9</button>
+                <button onClick={() => handleClick('-')} style={styles.button}>-</button>
+                <button onClick={() => handleClick('4')} style={styles.button}>4</button>
+                <button onClick={() => handleClick('5')} style={styles.button}>5</button>
+                <button onClick={() => handleClick('6')} style={styles.button}>6</button>
+                <button onClick={() => handleClick('+')} style={styles.button}>+</button>
+                <button onClick={() => handleClick('1')} style={styles.button}>1</button>
+                <button onClick={() => handleClick('2')} style={styles.button}>2</button>
+                <button onClick={() => handleClick('3')} style={styles.button}>3</button>
+                <button onClick={calculateResult} style={styles.button}>=</button>
+                <button onClick={() => handleClick('0')} style={styles.button}>0</button>
+                <button onClick={() => handleClick('.')} style={styles.button}>.</button>
+            </div>
+        </div>
+    );
+};
+
+const styles = {
+    calculator: {
+        width: '360px',
+        margin: '100px auto',
+        border: '2px solid #ccc',
+        padding: '20px',
+        borderRadius: '10px',
+        textAlign: 'right',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
+    },
+    display: {
+        marginBottom: '20px',
+        padding: '10px',
+        backgroundColor: '#f0f0f0',
+        borderRadius: '5px',
+        boxShadow: 'inset 0px 2px 5px rgba(0, 0, 0, 0.1)'
+    },
+    buttons: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '10px'
+    },
+    button: {
+        padding: '20px',
+        fontSize: '18px',
+        backgroundColor: '#fff',
+        border: '1px solid #ddd',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        transition: 'background-color 0.2s ease',
+    }
+};
+
+export default Calculator;
