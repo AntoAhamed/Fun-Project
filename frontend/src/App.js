@@ -18,6 +18,12 @@ import EditNotes from './components/offline/notepad/EditNotes'
 
 import Calculator from './components/offline/calculator/Calculator'
 
+import AddTodos from './components/offline/todolist/AddTodos'
+import Todos from './components/offline/todolist/Todos'
+
+import Weather from './components/online/weather/Weather'
+import News from './components/online/news/News'
+
 function App() {
   //Notepad
   let initNotes;
@@ -27,8 +33,8 @@ function App() {
     initNotes = JSON.parse(localStorage.getItem("notes"));
   }
 
-  const [title, setTitle] = useState('')
-  const [desc, setDesc] = useState('')
+  const [noteTitle, setNoteTitle] = useState('')
+  const [noteDesc, setNoteDesc] = useState('')
   const [notes, setNotes] = useState(initNotes)
   const [toEditNote, setToEditNote] = useState({})
   const [newTitle, setNewTitle] = useState('')
@@ -50,7 +56,7 @@ function App() {
   const addNotes = (e) => {
     e.preventDefault();
 
-    if (title.length > 0 && desc.length > 0) {
+    if (noteTitle.length > 0 && noteDesc.length > 0) {
       let sno;
 
       if (notes.length === 0) {
@@ -61,15 +67,15 @@ function App() {
 
       const newNote = {
         sno: sno + 1,
-        title: title,
-        desc: desc,
+        title: noteTitle,
+        desc: noteDesc,
         date: date,
         time: time
       }
 
       setNotes([...notes, newNote]);
-      setTitle('');
-      setDesc('');
+      setNoteTitle('');
+      setNoteDesc('');
 
       setAlertMssg("Note added successfully.");
       alertSystem();
@@ -83,8 +89,8 @@ function App() {
   const clear = (e) => {
     e.preventDefault();
 
-    setTitle('');
-    setDesc('');
+    setNoteTitle('');
+    setNoteDesc('');
     setNewTitle('');
     setNewDesc('');
   }
@@ -157,7 +163,59 @@ function App() {
   //Notepad end
 
   //Todolist
-  
+  let initTodo;
+  if (localStorage.getItem("todos") === null) {
+    initTodo = [];
+  }
+  else {
+    initTodo = JSON.parse(localStorage.getItem("todos"));
+  }
+
+  const [todoTitle, setTodoTitle] = useState('');
+  const [todoDesc, setTodoDesc] = useState('');
+
+  const addTodo = () => {
+    if (todoTitle.length > 0 && todoDesc.length > 0) {
+      let sno;
+      if (todos.length === 0) {
+        sno = 0;
+      }
+      else {
+        sno = todos[todos.length - 1].sno;
+      }
+      let myTodo = {
+        sno: sno + 1,
+        title: todoTitle,
+        desc: todoDesc
+      }
+
+      setTodos([...todos, myTodo]);
+      setTodoTitle('');
+      setTodoDesc('');
+
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    else {
+      alert("Title or Description can't be blank");
+    }
+  }
+
+  const onDelete = (todo) => {
+    setTodos(
+      todos.filter((e) => {
+        return e !== todo;
+      })
+    )
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+
+  const [todos, setTodos] = useState(initTodo);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos])
+  //Todolist end
 
   return (
     <div className="App">
@@ -174,11 +232,17 @@ function App() {
             <Route path='/timer' element={<Timer />} />
 
             <Route path='/calculator' element={<Calculator />} />
-            
-            <Route path="/writeNotes" element={<AddNotes title={title} desc={desc} setTitle={setTitle} setDesc={setDesc} addNotes={addNotes} clear={clear} date={date} time={time} />} />
+
+            <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} date={date} time={time} />} />
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} date={date} time={time} />} />
             <Route path="/editNotes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} date={date} time={time} />} />
 
+            <Route path='/writeTodos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} />} />
+            <Route path='/todos' element={<Todos todos={todos} onDelete={onDelete} />} />
+
+            <Route path='/weather' element={<Weather />} />
+
+            <Route path='/news' element={<News />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -39,7 +39,6 @@ const Navbar = () => {
                                     Offline Features
                                 </Link>
                                 <ul class="dropdown-menu">
-                                    
                                     <li><Link class="dropdown-item" to="/alarm">Alarm</Link></li>
                                     <li><Link class="dropdown-item" to="/stopwatch">Stopwatch</Link></li>
                                     <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
@@ -49,7 +48,18 @@ const Navbar = () => {
                                     <li><Link class="dropdown-item" to="/writeNotes">Add Notes</Link></li>
                                     <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="#">Todos</Link></li>
+                                    <li><Link class="dropdown-item" to="/writeTodos">Add Todos</Link></li>
+                                    <li><Link class="dropdown-item" to="/todos">Your Todos</Link></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <Link class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Online Features
+                                </Link>
+                                <ul class="dropdown-menu">
+                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/news">News</Link></li>
                                 </ul>
                             </li>
                         </ul>
