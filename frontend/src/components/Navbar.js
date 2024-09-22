@@ -60,6 +60,31 @@ const Navbar = () => {
                                     <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/news">News</Link></li>
+                                    {/*<li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>*/}
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
+                                    {/*<li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/random-quote">Random Quote</Link></li>
+                                    <li><Link class="dropdown-item" to="/motivational-quote">Motivational Quote</Link></li>*/}
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <Link class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Games
+                                </Link>
+                                <ul class="dropdown-menu">
+                                    <li><Link class="dropdown-item" to="/guess-number">Guess Number</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/quiz">Quiz</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/roke-paper-scissors">Roke Paper Scissors</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/puzzle">Puzzle</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/tic-tac-toe">Tic Tac Toe</Link></li>
                                 </ul>
                             </li>
                         </ul>

@@ -22,7 +22,20 @@ import AddTodos from './components/offline/todolist/AddTodos'
 import Todos from './components/offline/todolist/Todos'
 
 import Weather from './components/online/weather/Weather'
+
 import News from './components/online/news/News'
+
+import GuessNumber from './components/games/guessnumber/GuessNumber'
+import QuizGame from './components/games/quizgame/QuizGame'
+import RokePaperScissors from './components/games/rockpaperscissors/RockPaperScissors'
+import SlidingPuzzle from './components/games/slidingpuzzle/SlidingPuzzle'
+import TicTacToe from './components/games/tictactoe/TicTacToe'
+
+import AffirmationGenerator from './components/online/affirmation/Affirmation'
+import FactGenerator from './components/online/fact/Fact'
+import JokeGenerator from './components/online/joke/Joke'
+import MotivationalQuoteGenerator from './components/online/motivationalquote/MotivationalQuote'
+import QuoteGenerator from './components/online/quote/Quote'
 
 function App() {
   //Notepad
@@ -241,8 +254,18 @@ function App() {
             <Route path='/todos' element={<Todos todos={todos} onDelete={onDelete} />} />
 
             <Route path='/weather' element={<Weather />} />
-
             <Route path='/news' element={<News />} />
+            <Route path='/affirmation' element={<AffirmationGenerator />} />
+            <Route path='/fact' element={<FactGenerator />} />
+            <Route path='/joke' element={<JokeGenerator />} />
+            <Route path='/motivational-quote' element={<MotivationalQuoteGenerator />} />
+            <Route path='/random-quote' element={<QuoteGenerator />} />
+
+            <Route path='/guess-number' element={<GuessNumber />} />
+            <Route path='/quiz' element={<QuizGame />} />
+            <Route path='/roke-paper-scissors' element={<RokePaperScissors />} />
+            <Route path='/puzzle' element={<SlidingPuzzle />} />
+            <Route path='/tic-tac-toe' element={<TicTacToe />} />
           </Route>
         </Routes>
       </BrowserRouter>
