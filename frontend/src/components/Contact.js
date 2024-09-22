@@ -4,12 +4,12 @@ function Contact() {
     return (
         <div className='container'>
             <div className='row mb-3'>
-                <div className="col text-center" style={{ fontSize: "32px" }}>
-                    <b>Contact Us</b>
+                <div className="col text-center fs-1">
+                    <b>Contact With Us</b>
                 </div>
             </div>
             <div className='row mb-3'>
-                <div className='col'>
+                <div className='col fs-5 p-4'>
                     <p>
                         Thank you for your interest in <strong>Fun Project</strong> We'd love to hear from you and are here to help with any questions, comments, or concerns you may have.
 

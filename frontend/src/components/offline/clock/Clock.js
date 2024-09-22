@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import clock_img from '../../../assets/clock.jpeg'
 
 function Clock() {
     const [time, setTime] = useState(new Date())
@@ -11,25 +12,22 @@ function Clock() {
         return () => clearInterval(timerId)
     }, [])
 
-    const formatDate = (now) => {
-        const days = String(now.getDate()).padStart(2, '0')
-        const months = String(now.getMonth()+1).padStart(2, '0')
-        const years = String(now.getFullYear())
-        return `${days}/${months}/${years}`
-    };
-
-    const formatTime = (now) => {
-        const hours = String(now.getHours()).padStart(2, '0')
-        const minutes = String(now.getMinutes()).padStart(2, '0')
-        const seconds = String(now.getSeconds()).padStart(2, '0')
-        return `${hours}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`
-    };
-
     return (
-        <div style={{ fontSize: '48px', fontWeight: 'bold', textAlign: 'center', display: 'flex', flexDirection: 'column'}}>
-            <p>Date & Time Clock</p>
-            <p>{formatDate(time)}</p>
-            <p>{formatTime(time)}</p>
+        <div className='container'>
+            <div className='row'>
+                <div className='col text-center'>
+                    <img src={clock_img} alt='' width={'71%'} />
+                </div>
+                <div className='col d-flex flex-column justify-content-center align-items-center'>
+                    <div className='border border-3 rounded text-center' style={{ padding: '10%' }}>
+                        <h2 className='fs-1 fw-bold mb-4'>Date & Time Clock</h2>
+                        <div className='d-flex justify-content-between'>
+                            <p className='fs-3'>{time.toLocaleDateString()}</p>
+                            <p className='fs-3'>{time.toLocaleTimeString()}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

@@ -50,7 +50,7 @@ const Calculator = () => {
 const styles = {
     calculator: {
         width: '360px',
-        margin: '100px auto',
+        margin: '3% auto',
         border: '2px solid #ccc',
         padding: '20px',
         borderRadius: '10px',

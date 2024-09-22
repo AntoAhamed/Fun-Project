@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import alarm_img from '../../../assets/alarm.jpeg'
 
 const Alarm = () => {
     const [alarmTime, setAlarmTime] = useState("");
     const [message, setMessage] = useState("");
     const [currentTime, setCurrentTime] = useState(new Date());
+
+    const resetAlarm = () => {
+        setAlarmTime("")
+        setMessage("")
+    }
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -20,53 +26,30 @@ const Alarm = () => {
     }, [alarmTime, currentTime]);
 
     return (
-        <div style={styles.container}>
-            <h2>Set Alarm</h2>
-            <div style={styles.timeDisplay}>{currentTime.toLocaleTimeString()}</div>
-            <input
-                type="time"
-                value={alarmTime}
-                onChange={(e) => setAlarmTime(e.target.value)}
-                style={styles.input}
-            />
-            <button onClick={() => setAlarmTime("")} style={styles.button}>
-                Reset Alarm
-            </button>
-            {message && <p style={styles.message}>{message}</p>}
+        <div className='container'>
+            <div className='row'>
+                <div className='col text-center'>
+                    <img src={alarm_img} alt='' width={'68%'} />
+                </div>
+                <div className='col d-flex flex-column justify-content-center align-items-center'>
+                    <div className='border border-3 rounded text-center' style={{padding: '10%'}}>
+                        <h2 className='fs-1 fw-bold'>Set Alarm</h2>
+                        <p className='fs-3'>{currentTime.toLocaleTimeString()}</p>
+                        <input
+                            className='form-control mb-2'
+                            type="time"
+                            value={alarmTime}
+                            onChange={(e) => setAlarmTime(e.target.value)}
+                        />
+                        <button className='btn btn-primary' onClick={resetAlarm}>
+                            Reset Alarm
+                        </button>
+                        {message && <p>{message}</p>}
+                    </div>
+                </div>
+            </div>
         </div>
     );
-};
-
-const styles = {
-    container: {
-        textAlign: 'center',
-        margin: '50px auto',
-        padding: '20px',
-        width: '250px',
-        border: '2px solid #ccc',
-        borderRadius: '10px',
-    },
-    timeDisplay: {
-        fontSize: '36px',
-        marginBottom: '20px',
-    },
-    input: {
-        padding: '10px',
-        fontSize: '16px',
-        width: '80%',
-        marginBottom: '20px',
-    },
-    button: {
-        padding: '10px 20px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        marginTop: '10px',
-    },
-    message: {
-        color: 'red',
-        fontWeight: 'bold',
-        marginTop: '10px',
-    },
 };
 
 export default Alarm;

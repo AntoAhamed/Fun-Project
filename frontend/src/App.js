@@ -8,6 +8,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 
 import Alarm from './components/offline/alarm/Alarm'
+import Clock from './components/offline/clock/Clock'
 import Stopwatch from './components/offline/stopwatch/Stopwatch'
 import Timer from './components/offline/timer/Timer'
 
@@ -36,6 +37,8 @@ import FactGenerator from './components/online/fact/Fact'
 import JokeGenerator from './components/online/joke/Joke'
 import MotivationalQuoteGenerator from './components/online/motivationalquote/MotivationalQuote'
 import QuoteGenerator from './components/online/quote/Quote'
+import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
+import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
 
 function App() {
   //Notepad
@@ -241,6 +244,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
 
             <Route path='/alarm' element={<Alarm />} />
+            <Route path='/clock' element={<Clock />} />
             <Route path='/stopwatch' element={<Stopwatch />} />
             <Route path='/timer' element={<Timer />} />
 
@@ -252,6 +256,10 @@ function App() {
 
             <Route path='/writeTodos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} />} />
             <Route path='/todos' element={<Todos todos={todos} onDelete={onDelete} />} />
+
+            <Route path='/cgpa-calculator' element={<CGPACalculator />} />
+
+            <Route path='/currency-converter' element={<CurrencyConverter />} />
 
             <Route path='/weather' element={<Weather />} />
             <Route path='/news' element={<News />} />
@@ -270,7 +278,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <Footer />
+      {/*<Footer /> */}
     </div>
   )
 }

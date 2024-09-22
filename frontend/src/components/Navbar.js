@@ -20,13 +20,13 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-md bg-light">
+            <nav className="navbar navbar-expand-md">
                 <div className="container">
-                    <Link className="navbar-brand mx-4" to="#">Fun Project...</Link>
+                    <Link className="navbar-brand mx-4" to="...">Toolbox</Link>
                     <div className="nav justify-content-end p-2" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link" aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
@@ -36,10 +36,11 @@ const Navbar = () => {
                             </li>
                             <li class="nav-item dropdown">
                                 <Link class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Offline Features
+                                    Offline Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/alarm">Alarm</Link></li>
+                                    <li><Link class="dropdown-item" to="/clock">Clock</Link></li>
                                     <li><Link class="dropdown-item" to="/stopwatch">Stopwatch</Link></li>
                                     <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
@@ -50,11 +51,15 @@ const Navbar = () => {
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/writeTodos">Add Todos</Link></li>
                                     <li><Link class="dropdown-item" to="/todos">Your Todos</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <Link class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Online Features
+                                    Online Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/weather">Weather</Link></li>

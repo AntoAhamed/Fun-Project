@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import timer_img from '../../../assets/timer.jpeg'
 
 const Timer = () => {
     const [time, setTime] = useState(0);  // Time in seconds
@@ -32,28 +33,37 @@ const Timer = () => {
     };
 
     return (
-        <div style={styles.container}>
-            <h2>Timer</h2>
-            <div style={styles.timeDisplay}>{formatTime(time)}</div>
-            <input
-                type="number"
-                placeholder="Set time in seconds"
-                value={time}
-                onChange={(e) => setTime(parseInt(e.target.value))}
-                disabled={isRunning}
-                style={styles.input}
-                min='0'
-            />
-            <div>
-                <button onClick={startTimer} style={styles.button} disabled={isRunning || time === 0}>
-                    Start
-                </button>
-                <button onClick={stopTimer} style={styles.button}>
-                    Stop
-                </button>
-                <button onClick={resetTimer} style={styles.button}>
-                    Reset
-                </button>
+        <div className='container'>
+            <div className='row'>
+                <div className='col text-center'>
+                    <img src={timer_img} alt='' width={'68%'} />
+                </div>
+                <div className='col d-flex flex-column justify-content-center align-items-center'>
+                    <div className='border border-3 rounded text-center' style={{ padding: '10%' }}>
+                        <h2 className='fs-1 fw-bold'>Timer</h2>
+                        <div className='fs-3'>{formatTime(time)}</div>
+                        <input
+                            className='form-control mb-2 text-center'
+                            type="number"
+                            placeholder="Set time in seconds"
+                            value={time}
+                            onChange={(e) => setTime(parseInt(e.target.value))}
+                            disabled={isRunning}
+                            min='0'
+                        />
+                        <div>
+                            <button className='btn btn-primary m-2' onClick={startTimer} disabled={isRunning || time === 0}>
+                                Start
+                            </button>
+                            <button className='btn btn-primary m-2' onClick={stopTimer}>
+                                Stop
+                            </button>
+                            <button className='btn btn-primary m-2' onClick={resetTimer}>
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -64,33 +74,6 @@ const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-};
-
-const styles = {
-    container: {
-        textAlign: 'center',
-        margin: '50px auto',
-        padding: '20px',
-        width: '250px',
-        border: '2px solid #ccc',
-        borderRadius: '10px',
-    },
-    timeDisplay: {
-        fontSize: '48px',
-        marginBottom: '20px',
-    },
-    input: {
-        padding: '10px',
-        fontSize: '16px',
-        width: '80%',
-        marginBottom: '20px',
-    },
-    button: {
-        margin: '5px',
-        padding: '10px 20px',
-        fontSize: '16px',
-        cursor: 'pointer',
-    },
 };
 
 export default Timer;

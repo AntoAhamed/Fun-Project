@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import stopwatch_img from '../../../assets/stopwatch.jpeg'
 
 const Stopwatch = () => {
     const [time, setTime] = useState(0);
@@ -22,18 +23,27 @@ const Stopwatch = () => {
     };
 
     return (
-        <div style={styles.container}>
-            <h2>Stopwatch</h2>
-            <div style={styles.timeDisplay}>{formatTime(time)}</div>
-            <button onClick={startStopwatch} style={styles.button} disabled={isRunning}>
-                Start
-            </button>
-            <button onClick={stopStopwatch} style={styles.button}>
-                Stop
-            </button>
-            <button onClick={resetStopwatch} style={styles.button}>
-                Reset
-            </button>
+        <div className='container'>
+            <div className='row'>
+                <div className='col text-center'>
+                    <img src={stopwatch_img} alt='' width={'68%'} />
+                </div>
+                <div className='col d-flex flex-column justify-content-center align-items-center'>
+                    <div className='border border-3 rounded text-center' style={{ padding: '10%' }}>
+                        <h2 className='fs-1 fw-bold'>Stopwatch</h2>
+                        <div className='fs-3'>{formatTime(time)}</div>
+                        <button className='btn btn-primary m-2' onClick={startStopwatch} disabled={isRunning}>
+                            Start
+                        </button>
+                        <button className='btn btn-primary m-2' onClick={stopStopwatch}>
+                            Stop
+                        </button>
+                        <button className='btn btn-primary m-2' onClick={resetStopwatch}>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
@@ -42,27 +52,6 @@ const formatTime = (timeInSeconds) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-};
-
-const styles = {
-    container: {
-        textAlign: 'center',
-        margin: '50px auto',
-        padding: '20px',
-        width: '250px',
-        border: '2px solid #ccc',
-        borderRadius: '10px',
-    },
-    timeDisplay: {
-        fontSize: '48px',
-        marginBottom: '20px',
-    },
-    button: {
-        margin: '5px',
-        padding: '10px 20px',
-        fontSize: '16px',
-        cursor: 'pointer',
-    },
 };
 
 export default Stopwatch;
