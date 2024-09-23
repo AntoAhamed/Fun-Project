@@ -22,7 +22,7 @@ const JokeGenerator = () => {
         <div className='container my-4'>
             <div class="card">
                 <div className='card-header d-flex justify-content-between'>
-                    <h4>Random Joke</h4>
+                    <h4>Random Joke Only For You</h4>
                     <button className='btn btn-sm btn-primary' onClick={fetchJoke}>Get New Joke</button>
                 </div>
                 <div class="card-body">

@@ -16,7 +16,7 @@ const InputForm = ({ addGrade }) => {
     };
 
     return (
-        <form className='d-flex  mb-2' onSubmit={handleSubmit}>
+        <form className='mb-4' onSubmit={handleSubmit}>
             <input
                 className='form-control m-2'
                 type="text"
@@ -39,7 +39,7 @@ const InputForm = ({ addGrade }) => {
                 onChange={(e) => setGradePoint(e.target.value)}
                 step="0.01"
             />
-            <button className='btn btn-sm btn-primary my-2' type="submit">Add Grade</button>
+            <button className='btn btn-sm btn-primary rounded-pill my-2' type="submit">Add Grade</button>
         </form>
     );
 };

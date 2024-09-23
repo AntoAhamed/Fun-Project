@@ -33,13 +33,13 @@ const Timer = () => {
     };
 
     return (
-        <div className='container'>
+        <div className=''>
             <div className='row'>
                 <div className='col text-center'>
-                    <img src={timer_img} alt='' width={'68%'} />
+                    <img src={timer_img} alt='' width={'100%'} />
                 </div>
                 <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className='border border-3 rounded text-center' style={{ padding: '10%' }}>
+                    <div className='border border-5 rounded text-center' style={{ padding: '10%' }}>
                         <h2 className='fs-1 fw-bold'>Timer</h2>
                         <div className='fs-3'>{formatTime(time)}</div>
                         <input
@@ -52,13 +52,13 @@ const Timer = () => {
                             min='0'
                         />
                         <div>
-                            <button className='btn btn-primary m-2' onClick={startTimer} disabled={isRunning || time === 0}>
+                            <button className='btn btn-primary rounded-pill m-2' onClick={startTimer} disabled={isRunning || time === 0}>
                                 Start
                             </button>
-                            <button className='btn btn-primary m-2' onClick={stopTimer}>
+                            <button className='btn btn-primary rounded-pill m-2' onClick={stopTimer}>
                                 Stop
                             </button>
-                            <button className='btn btn-primary m-2' onClick={resetTimer}>
+                            <button className='btn btn-primary rounded-pill m-2' onClick={resetTimer}>
                                 Reset
                             </button>
                         </div>

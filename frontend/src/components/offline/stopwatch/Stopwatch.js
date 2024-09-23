@@ -23,22 +23,22 @@ const Stopwatch = () => {
     };
 
     return (
-        <div className='container'>
+        <div className=''>
             <div className='row'>
                 <div className='col text-center'>
-                    <img src={stopwatch_img} alt='' width={'68%'} />
+                    <img src={stopwatch_img} alt='' width={'100%'} />
                 </div>
                 <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className='border border-3 rounded text-center' style={{ padding: '10%' }}>
+                    <div className='border border-5 rounded text-center' style={{ padding: '10%' }}>
                         <h2 className='fs-1 fw-bold'>Stopwatch</h2>
                         <div className='fs-3'>{formatTime(time)}</div>
-                        <button className='btn btn-primary m-2' onClick={startStopwatch} disabled={isRunning}>
+                        <button className='btn btn-primary rounded-pill m-2' onClick={startStopwatch} disabled={isRunning}>
                             Start
                         </button>
-                        <button className='btn btn-primary m-2' onClick={stopStopwatch}>
+                        <button className='btn btn-primary rounded-pill m-2' onClick={stopStopwatch}>
                             Stop
                         </button>
-                        <button className='btn btn-primary m-2' onClick={resetStopwatch}>
+                        <button className='btn btn-primary rounded-pill m-2' onClick={resetStopwatch}>
                             Reset
                         </button>
                     </div>

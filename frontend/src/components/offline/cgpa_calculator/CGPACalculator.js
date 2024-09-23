@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputForm from './InputForm';
 import Results from './Results';
+import cal_img from '../../../assets/calculator.jpeg'
 
 const CGPACalculator = () => {
     const [grades, setGrades] = useState([]);
@@ -24,15 +25,27 @@ const CGPACalculator = () => {
     };
 
     return (
-        <div className='d-flex flex-column align-items-center mt-4'>
-            <h1>CGPA Calculator</h1>
-            {grades.map((grade, index)=>(
-                <p key={index}>{grade.subject} - {grade.credit} - {grade.gradePoint}</p>
-            ))}
-            <InputForm addGrade={addGrade} />
-            <button className='btn btn-primary' onClick={calculateCGPA}>Calculate CGPA</button>
-            {cgpa && <Results cgpa={cgpa} />}
+        <div className=''>
+            <div className='row'>
+                <div className='col text-center'>
+                    <img src={cal_img} alt='' width={'100%'} />
+                </div>
+                <div className='col d-flex flex-column justify-content-center align-items-center'>
+                    <div className='border border-5 rounded text-center' style={{ padding: '10%' }}>
+                        <div className='d-flex flex-column align-items-center mt-4'>
+                            <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
+                            {grades.map((grade, index) => (
+                                <p key={index} className='fs-4'>S: {grade.subject} - C: {grade.credit} - G: {grade.gradePoint}</p>
+                            ))}
+                            <InputForm addGrade={addGrade} />
+                            <button className='btn btn-primary rounded-pill mb-2' onClick={calculateCGPA}>Calculate CGPA</button>
+                            {cgpa && <Results cgpa={cgpa} />}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     );
 };
 

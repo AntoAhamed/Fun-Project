@@ -26,13 +26,13 @@ const Alarm = () => {
     }, [alarmTime, currentTime]);
 
     return (
-        <div className='container'>
+        <div className=''>
             <div className='row'>
                 <div className='col text-center'>
-                    <img src={alarm_img} alt='' width={'68%'} />
+                    <img src={alarm_img} alt='' width={'100%'} />
                 </div>
                 <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className='border border-3 rounded text-center' style={{padding: '10%'}}>
+                    <div className='border border-5 rounded text-center' style={{padding: '10%'}}>
                         <h2 className='fs-1 fw-bold'>Set Alarm</h2>
                         <p className='fs-3'>{currentTime.toLocaleTimeString()}</p>
                         <input
@@ -41,7 +41,7 @@ const Alarm = () => {
                             value={alarmTime}
                             onChange={(e) => setAlarmTime(e.target.value)}
                         />
-                        <button className='btn btn-primary' onClick={resetAlarm}>
+                        <button className='btn btn-primary rounded-pill' onClick={resetAlarm}>
                             Reset Alarm
                         </button>
                         {message && <p>{message}</p>}

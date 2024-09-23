@@ -48,22 +48,17 @@
 
 /* Start */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
     background-color: rgb(53, 134, 13);
 }
 
-.navbar-brand {
+.navbar-brand-custom {
     color: white;
     font-weight: 800;
     font-size: 25px;
-}
-
-.navbar-brand:hover {
-    color: white;
-    cursor: auto;
 }
 
 .nav-link {

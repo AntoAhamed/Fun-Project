@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-md">
                 <div className="container">
-                    <Link className="navbar-brand mx-4" to="...">Toolbox</Link>
+                    <div className="navbar-brand-custom mx-4">Toolbox</div>
                     <div className="nav justify-content-end p-2" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify">
                             <li className="nav-item">
@@ -45,16 +45,13 @@ const Navbar = () => {
                                     <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/calculator">Calculator</Link></li>
+                                    <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/writeNotes">Add Notes</Link></li>
                                     <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/writeTodos">Add Todos</Link></li>
                                     <li><Link class="dropdown-item" to="/todos">Your Todos</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -62,16 +59,18 @@ const Navbar = () => {
                                     Online Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
+                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/news">News</Link></li>
+                                    <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
                                     {/*<li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>*/}
+                                    <li><Link class="dropdown-item" to="/news">News</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/fact">Fact</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
-                                    {/*<li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/random-quote">Random Quote</Link></li>
                                     <li><Link class="dropdown-item" to="/motivational-quote">Motivational Quote</Link></li>*/}
                                 </ul>
@@ -83,11 +82,11 @@ const Navbar = () => {
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/guess-number">Guess Number</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/puzzle">Puzzle</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/quiz">Quiz</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/roke-paper-scissors">Roke Paper Scissors</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/puzzle">Puzzle</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/tic-tac-toe">Tic Tac Toe</Link></li>
                                 </ul>
