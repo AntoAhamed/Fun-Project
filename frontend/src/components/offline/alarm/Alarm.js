@@ -26,13 +26,13 @@ const Alarm = () => {
     }, [alarmTime, currentTime]);
 
     return (
-        <div className=''>
+        <div className='container-fluid'>
             <div className='row'>
-                <div className='col text-center'>
-                    <img src={alarm_img} alt='' width={'100%'} />
+                <div className='col-md-6 image-container'>
+                    
                 </div>
-                <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className='border border-5 rounded text-center' style={{padding: '10%'}}>
+                <div className='col-md-6 text-container'>
+                    <div className='border border-5 rounded text-center feature-card'>
                         <h2 className='fs-1 fw-bold'>Set Alarm</h2>
                         <p className='fs-3'>{currentTime.toLocaleTimeString()}</p>
                         <input

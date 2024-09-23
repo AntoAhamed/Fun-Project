@@ -6,7 +6,7 @@ function note(props) {
 
     return (
         <div className="col-sm-6 mb-2 mb-sm-0">
-            <div className="card border-0 m-4" style={{background: 'aliceblue'}}>
+            <div className="card border-top-0 border-end-0 border-bottom-0 m-4" style={{background: 'aliceblue'}}>
                 <div className="card-body m-2">
                     <h4 className="card-title fw-semibold">{title}</h4>
                     <p className="card-text">{desc}</p>

@@ -25,13 +25,13 @@ const Calculator = () => {
     };
 
     return (
-        <div className=''>
+        <div className='container-fluid'>
             <div className='row'>
-                <div className='col text-center'>
-                    <img src={cal_img} alt='' width={'100%'} />
+                <div className='col-md-6 image-container'>
+
                 </div>
-                <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className=''>
+                <div className='col-md-6 text-container'>
+                    <div className='feature-card'>
                         <div style={styles.calculator}>
                             <div style={styles.display}>
                                 <h1>{input || "0"}</h1>  {/* Displays current input or 0 */}

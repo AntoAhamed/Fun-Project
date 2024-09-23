@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <div className='row'>
         <div className='col-6'>
           <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Alarm</p>

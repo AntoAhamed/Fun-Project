@@ -25,13 +25,13 @@ const CGPACalculator = () => {
     };
 
     return (
-        <div className=''>
+        <div className='container-fluid'>
             <div className='row'>
-                <div className='col text-center'>
-                    <img src={cal_img} alt='' width={'100%'} />
+                <div className='col-md-6 image-container'>
+
                 </div>
-                <div className='col d-flex flex-column justify-content-center align-items-center'>
-                    <div className='border border-5 rounded text-center' style={{ padding: '10%' }}>
+                <div className='col-md-6 text-container'>
+                    <div className='border border-5 rounded text-center feature-card'>
                         <div className='d-flex flex-column align-items-center mt-4'>
                             <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
                             {grades.map((grade, index) => (

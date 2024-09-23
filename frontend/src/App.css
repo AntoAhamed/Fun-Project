@@ -1,51 +1,3 @@
-.weather {
-    background: rgb(165, 202, 245);
-    border-radius: 5px;
-    margin: 3%;
-    padding: 3%;
-}
-
-.primary {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.primary div:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 70px;
-    font-weight: 600;
-    margin: 2% 5%;
-}
-
-.primary div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid gray;
-    border-radius: 50%;
-    padding: 20px;
-    margin: 2% 5%;
-}
-
-.secondary {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.secondary p {
-    border: 0.5px solid gray;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-}
-
 /* Start */
 body {
     font-family: 'Roboto', sans-serif;
@@ -64,4 +16,34 @@ body {
 .nav-link {
     color: white;
     margin-right: 5px;
+}
+
+.image-container {
+    background-image: url('./assets/alarm.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Full height */
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.feature-card {
+    padding: 10%;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    box-shadow: 10px 10px 5px rgb(238, 236, 241);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border: 1px solid rgb(184, 184, 184);
+    box-shadow: none;
 }

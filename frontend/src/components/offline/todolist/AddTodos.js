@@ -3,12 +3,12 @@ import todo_img from '../../../assets/todo.jpeg'
 
 function AddTodos(props) {
     return (
-        <div className=''>
+        <div className='container-fluid'>
             <div className='row'>
-                <div className='col-6'>
-                    <img src={todo_img} alt='' width={'100%'} />
+                <div className='col-md-6 image-container'>
+
                 </div>
-                <div className='col-6 p-4'>
+                <div className='col-md-6 p-5'>
                     <h2 className='fs-2 fw-bold text-center'>Add Todos</h2>
                     <form>
                         <div className="mb-3">

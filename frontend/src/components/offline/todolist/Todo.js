@@ -2,7 +2,7 @@ import React from 'react'
 
 function Todo(props) {
   return (
-    <div className="card border-0 m-4" style={{ background: 'aliceblue' }}>
+    <div className="card border-top-0 border-end-0 border-bottom-0 m-4" style={{ background: 'aliceblue' }}>
       <div className="card-body m-2">
         <h4 className="card-title fw-semibold">{props.todo.title}</h4>
         <p className="card-text">{props.todo.desc}</p>
