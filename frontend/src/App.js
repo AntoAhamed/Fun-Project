@@ -39,6 +39,7 @@ import MotivationalQuoteGenerator from './components/online/motivationalquote/Mo
 import QuoteGenerator from './components/online/quote/Quote'
 import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
 import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
+import Reminder from './components/offline/reminder/Reminder'
 
 function App() {
   //Notepad
@@ -247,6 +248,7 @@ function App() {
             <Route path='/clock' element={<Clock />} />
             <Route path='/stopwatch' element={<Stopwatch />} />
             <Route path='/timer' element={<Timer />} />
+            <Route path='/reminder' element={<Reminder />} />
 
             <Route path='/calculator' element={<Calculator />} />
 

@@ -46,6 +46,7 @@ const Navbar = () => {
                                     <li><Link class="dropdown-item" to="/clock">Clock</Link></li>
                                     <li><Link class="dropdown-item" to="/stopwatch">Stopwatch</Link></li>
                                     <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
+                                    <li><Link class="dropdown-item" to="/reminder">Reminder</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/calculator">Calculator</Link></li>
                                     <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
