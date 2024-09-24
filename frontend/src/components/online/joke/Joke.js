@@ -28,7 +28,7 @@ const JokeGenerator = () => {
                     <div className='border border-5 rounded text-center feature-card'>
                         <div class="card">
                             <div className='card-header d-flex justify-content-between'>
-                                <h4>Joke Only For You</h4>
+                                <h4>Joke</h4>
                                 <button className='btn btn-sm btn-primary rounded-pill' onClick={fetchJoke}>Get New Joke</button>
                             </div>
                             <div class="card-body">

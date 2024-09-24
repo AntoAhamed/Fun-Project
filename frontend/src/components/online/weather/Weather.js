@@ -65,7 +65,7 @@ function Weather() {
                         <div className='d-flex'>
                             <p className='border border-3 rounded my-5 p-2'>Wind Speed: {currentData.current?.wind_kph}km/h</p>
                             <p className='border border-3 rounded my-5 mx-3 p-2'>Humidity: {currentData.current?.humidity}%</p>
-                            <p className='border border-3 rounded my-5 mx-3 p-2'>Visibility: {currentData.current?.vis_km}km</p>
+                            <p className='border border-3 rounded my-5 p-2'>Visibility: {currentData.current?.vis_km}km</p>
                             <p className='border border-3 rounded my-5 mx-3 p-2'>Pressure: {currentData.current?.pressure_mb}mb</p>
                         </div>
                     </div>

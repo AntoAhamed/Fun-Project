@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-md">
                 <div className="container-fluid">
-                    <div className="fs-2 fw-bold text-light mx-4">Toolbox</div>
+                    <div className="fs-2 fw-bold text-light mx-4">ToolBox</div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -67,16 +67,15 @@ const Navbar = () => {
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/random-quote">Quote</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
                                     {/*<li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/news">News</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/random-quote">Random Quote</Link></li>
-                                    <li><Link class="dropdown-item" to="/motivational-quote">Motivational Quote</Link></li>*/}
+                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>*/}
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
