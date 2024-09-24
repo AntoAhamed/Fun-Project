@@ -21,10 +21,13 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-md">
-                <div className="container">
-                    <div className="navbar-brand-custom mx-4">Toolbox</div>
-                    <div className="nav justify-content-end p-2" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify">
+                <div className="container-fluid">
+                    <div className="fs-2 fw-bold text-light mx-4">Toolbox</div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse p-2" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/">Home</Link>
                             </li>
@@ -82,9 +85,9 @@ const Navbar = () => {
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/guess-number">Guess Number</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/puzzle">Puzzle</Link></li>
+                                    <li><Link class="dropdown-item" to="/puzzle">Sliding Puzzle</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/quiz">Quiz</Link></li>
+                                    <li><Link class="dropdown-item" to="/quiz">Eazy Quiz</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/roke-paper-scissors">Roke Paper Scissors</Link></li>
                                     <li><hr class="dropdown-divider" /></li>

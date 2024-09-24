@@ -55,7 +55,7 @@ function Weather() {
                         <h1 className='fs-1 fw-semibold'>Current Weather</h1>
                         <p className='fs-3'>Weather in {currentData.location?.name}</p>
                         <p className='fs-4'>{currentData.location?.localtime}</p>
-                        <div className='d-flex justify-content-around align-items-center'>
+                        <div className='d-flex justify-content-around align-items-center text-center'>
                             <p className='fs-1 fw-bolder text-decoration-underline'>{currentData.current?.temp_c}°C</p>
                             <div className='border border-3 rounded-circle p-5'>
                                 <p>{currentData.current?.condition.text}</p>

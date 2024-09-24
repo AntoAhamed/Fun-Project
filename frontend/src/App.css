@@ -7,12 +7,6 @@ body {
     background-color: rgb(53, 134, 13);
 }
 
-.navbar-brand-custom {
-    color: white;
-    font-weight: 800;
-    font-size: 25px;
-}
-
 .nav-link {
     color: white;
     margin-right: 5px;
