@@ -56,7 +56,7 @@ const RockPaperScissors = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className='border border-5 rounded text-center feature-card bg-light text-dark'>
                         <h2 className='fs-2 fw-bolder mb-3'>Rock Paper Scissors</h2>
                         <div className='mb-3'>
                             {options.map((option, index) => (

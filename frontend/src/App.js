@@ -39,6 +39,7 @@ import QuoteGenerator from './components/online/quote/Quote'
 import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
 import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
 import Reminder from './components/offline/reminder/Reminder'
+import Calendar from './components/offline/calendar/Calendar'
 
 function App() {
   //Current Time
@@ -232,22 +233,38 @@ function App() {
   }, [todos])
   //Todolist end
 
+  //Color mode
+  const [mode, setMode] = useState("light");
+
+  const changeMode = () => {
+    if (mode === "dark") {
+      setMode("light");
+      document.body.style.backgroundColor = "#E8E7D5";
+      document.body.style.color = "black";
+    }
+    else {
+      setMode("dark");
+      document.body.style.backgroundColor = "#3f3e42";
+      document.body.style.color = "white";
+    }
+  }
+
   return (
     <div className="App">
       {alert === true ? <Alert alertMssg={alertMssg} /> : ''}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar time={time}/>}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode}/>}>
+            <Route index element={<Home mode={mode}/>} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
 
-            <Route path='/alarm' element={<Alarm time={time} />} />
-            <Route path='/stopwatch' element={<Stopwatch />} />
-            <Route path='/timer' element={<Timer />} />
-            <Route path='/reminder' element={<Reminder time={time} />} />
+            <Route path='/alarm' element={<Alarm time={time} mode={mode} />} />
+            <Route path='/stopwatch' element={<Stopwatch mode={mode}/>} />
+            <Route path='/timer' element={<Timer mode={mode}/>} />
+            <Route path='/reminder' element={<Reminder time={time} mode={mode}/>} />
 
-            <Route path='/calculator' element={<Calculator />} />
+            <Route path='/calculator' element={<Calculator mode={mode}/>} />
 
             <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
@@ -255,9 +272,11 @@ function App() {
 
             <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
 
-            <Route path='/cgpa-calculator' element={<CGPACalculator />} />
+            <Route path='/cgpa-calculator' element={<CGPACalculator mode={mode}/>} />
 
-            <Route path='/currency-converter' element={<CurrencyConverter />} />
+            <Route path='/currency-converter' element={<CurrencyConverter mode={mode} />} />
+
+            <Route path='/calendar' element={<Calendar />} />
 
             <Route path='/weather' element={<Weather />} />
             <Route path='/news' element={<News />} />

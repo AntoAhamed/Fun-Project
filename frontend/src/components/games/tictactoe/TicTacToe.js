@@ -68,7 +68,7 @@ const TicTacToe = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light py-5 px-3'>
+                    <div className='border border-5 rounded text-center feature-card bg-light text-dark py-5 px-3'>
                         <h2 className='fs-2 fw-bolder mb-3'>Tic Tac Toe</h2>
                         <div className='mb-3' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 100px)', gap: '10px' }}>
                             {board.map((value, index) => (

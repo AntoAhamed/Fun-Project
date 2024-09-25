@@ -36,7 +36,7 @@ function Weather() {
                 <div className='col-md-6 d-flex justify-content-center align-items-center'>
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
-                <div className='col-md-6 p-4 rounded border border-secondary border-top-0 border-bottom-0 border-end-0' style={{ background: 'aliceblue' }}>
+                <div className='col-md-6 p-4 rounded border border-secondary border-top-0 border-bottom-0 border-end-0 text-dark' style={{ background: 'aliceblue' }}>
                     <div className='row g-3 justify-content-end mb-4'>
                         <div className='col-auto'>
                             <input
@@ -61,7 +61,7 @@ function Weather() {
                             <div className='col-md-6 p-4'>
                                 <div className='border border-5 rounded-circle m-5 p-5'>
                                     <p>{currentData.current?.condition.text}</p>
-                                    <p>Feelslike: <u>{currentData.current?.feelslike_c}°C</u></p>
+                                    <p>Feelslike: <u>{currentData.current?.feelslike_c || 'loading...'}°C</u></p>
                                 </div>
                             </div>
                         </div>

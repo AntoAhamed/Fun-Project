@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
-const Stopwatch = () => {
+const Stopwatch = (props) => {
+    const {mode} = props;
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
 
@@ -29,7 +30,7 @@ const Stopwatch = () => {
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <h2 className='fs-1 fw-bold'>Stopwatch</h2>
                         <div className='fs-3'>{formatTime(time)}</div>
                         <button className='btn btn-primary rounded-pill m-2' onClick={startStopwatch} disabled={isRunning}>

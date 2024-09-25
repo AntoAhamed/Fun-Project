@@ -3,7 +3,9 @@ import InputForm from './InputForm';
 import Results from './Results';
 import clock_img from '../../../assets/clock.jpeg'
 
-const CGPACalculator = () => {
+const CGPACalculator = (props) => {
+    const {mode} = props;
+
     const [grades, setGrades] = useState([]);
     const [cgpa, setCgpa] = useState(null);
 
@@ -31,7 +33,7 @@ const CGPACalculator = () => {
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <div className='d-flex flex-column align-items-center mt-4'>
                             <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
                             {grades.map((grade, index) => (

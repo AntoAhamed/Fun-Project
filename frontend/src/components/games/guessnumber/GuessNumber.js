@@ -70,7 +70,7 @@ const GuessNumber = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light '>
+                    <div className='border border-5 rounded text-center feature-card bg-light text-dark'>
                         <h2 className='fs-2 fw-bolder mb-3'>Guess That Number!</h2>
                         <h5 className='mb-3'>Enter your guess below</h5>
                         <div>

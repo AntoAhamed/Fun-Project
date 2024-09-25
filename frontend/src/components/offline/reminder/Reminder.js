@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
 const ReminderApp = (props) => {
-    const { time } = props;
+    const { time, mode } = props;
 
     const [reminderText, setReminderText] = useState('');
     const [reminderTime, setReminderTime] = useState('');
@@ -63,7 +63,7 @@ const ReminderApp = (props) => {
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <h2 className="fs-1 fw-bold mb-4">Reminders</h2>
                         {/* Add reminder form */}
                         <div className="form-group text-start">

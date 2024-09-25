@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
-const Calculator = () => {
+const Calculator = (props) => {
+    const {mode} = props;
+
     const [input, setInput] = useState('');  // Stores the input from the user
 
     const handleClick = (value) => {
@@ -32,8 +34,8 @@ const Calculator = () => {
                 </div>
                 <div className='col-md-6 text-container'>
                     <div className='feature-card p-0'>
-                        <div style={styles.calculator} className='bg-light'>
-                            <div style={styles.display}>
+                        <div style={styles.calculator} className={`bg-${mode}`}>
+                            <div style={styles.display} className={`text-${mode}`}>
                                 <h1>{input || "0"}</h1>  {/* Displays current input or 0 */}
                             </div>
                             <div style={styles.buttons}>

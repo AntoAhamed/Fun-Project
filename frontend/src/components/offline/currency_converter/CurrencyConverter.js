@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
-const CurrencyConverter = () => {
+const CurrencyConverter = (props) => {
+    const {mode} = props;
+
     const [currencies, setCurrencies] = useState([]);
     const [fromCurrency, setFromCurrency] = useState('USD');
     const [toCurrency, setToCurrency] = useState('EUR');
@@ -46,7 +48,7 @@ const CurrencyConverter = () => {
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <h2 className='fs-1 fw-bold'>Currency Converter</h2>
                         <p className='fs-6'>Enter Your Amount Below</p>
                         <div>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
-const Timer = () => {
+const Timer = (props) => {
+    const {mode} = props;
+
     const [time, setTime] = useState(0);  // Time in seconds
     const [isRunning, setIsRunning] = useState(false);
 
@@ -39,7 +41,7 @@ const Timer = () => {
                     <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <h2 className='fs-1 fw-bold'>Timer</h2>
                         <div className='fs-3'>{formatTime(time)}</div>
                         <input

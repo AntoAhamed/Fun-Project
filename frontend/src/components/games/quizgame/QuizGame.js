@@ -87,7 +87,7 @@ const QuizGame = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 {started ? <div className='col-md-6 text-container d-flex flex-row'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
+                    <div className='border border-5 rounded text-center feature-card bg-light text-dark'>
                         <h2 className='fs-2 fw-bolder mb-3'>Eazy Quiz</h2>
                         {!finished ? (
                             <div>
@@ -101,13 +101,13 @@ const QuizGame = () => {
                         ) : (
                             <div>
                                 <h3>Your score is: {score} / {questions.length}</h3>
-                                <button className='btn btn-outline-primary rounded-pill mt-4' onClick={handleReset}>Reset</button>
+                                <button className='btn btn-primary rounded-pill mt-4' onClick={handleReset}>Reset</button>
                             </div>
                         )}
                     </div>
                 </div> :
                     <div className='col-md-6 p-3'>
-                        <div className='border border-2 rounded p-3 bg-light'>
+                        <div className='border border-2 rounded p-3 bg-light text-dark'>
                             <h2 className='fs-2 fw-bolder text-center mb-3'>Set Questions</h2>
                             <input
                                 className='form-control mb-3'
