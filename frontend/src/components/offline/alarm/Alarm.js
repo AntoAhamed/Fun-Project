@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import alarm_img from '../../../assets/alarm.jpeg'
+import clock_img from '../../../assets/clock.jpeg'
 
-const Alarm = () => {
+const Alarm = (props) => {
+    const { time } = props;
+
     const [alarmTime, setAlarmTime] = useState("");
     const [message, setMessage] = useState("");
-    const [currentTime, setCurrentTime] = useState(new Date());
 
     const resetAlarm = () => {
         setAlarmTime("")
@@ -12,29 +13,21 @@ const Alarm = () => {
     }
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, []);
-
-    useEffect(() => {
-        if (alarmTime && currentTime.toLocaleTimeString('en-GB').slice(0, 5) === alarmTime) {
+        if (alarmTime && time.toLocaleTimeString('en-GB').slice(0, 5) === alarmTime) {
             setMessage("Time's up! Alarm is ringing.");
         }
-    }, [alarmTime, currentTime]);
+    }, [alarmTime, time]);
 
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 image-container'>
-                    
+                <div className='col-md-6 d-flex justify-content-center align-items-center'>
+                    <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light'>
                         <h2 className='fs-1 fw-bold'>Set Alarm</h2>
-                        <p className='fs-3'>{currentTime.toLocaleTimeString()}</p>
+                        <p className='fs-3'>{time.toLocaleTimeString()}</p>
                         <input
                             className='form-control mb-2'
                             type="time"

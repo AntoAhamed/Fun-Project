@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom'
+import Clock from './offline/clock/Clock'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { time } = props;
     /*const navigate = useNavigate()
 
     const handleLogout = () => {
@@ -43,7 +45,6 @@ const Navbar = () => {
                                 </Link>
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/alarm">Alarm</Link></li>
-                                    <li><Link class="dropdown-item" to="/clock">Clock</Link></li>
                                     <li><Link class="dropdown-item" to="/stopwatch">Stopwatch</Link></li>
                                     <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
                                     <li><Link class="dropdown-item" to="/reminder">Reminder</Link></li>
@@ -54,8 +55,7 @@ const Navbar = () => {
                                     <li><Link class="dropdown-item" to="/writeNotes">Add Notes</Link></li>
                                     <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/writeTodos">Add Todos</Link></li>
-                                    <li><Link class="dropdown-item" to="/todos">Your Todos</Link></li>
+                                    <li><Link class="dropdown-item" to="/todos">Todos List</Link></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -98,6 +98,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+
+            <Clock time={time} />
 
             <Outlet />
         </>

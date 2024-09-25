@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import timer_img from '../../../assets/timer.jpeg'
+import clock_img from '../../../assets/clock.jpeg'
 
 const Timer = () => {
     const [time, setTime] = useState(0);  // Time in seconds
@@ -35,11 +35,11 @@ const Timer = () => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 image-container'>
-
+            <div className='col-md-6 d-flex justify-content-center align-items-center'>
+                    <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light'>
                         <h2 className='fs-1 fw-bold'>Timer</h2>
                         <div className='fs-3'>{formatTime(time)}</div>
                         <input

@@ -4,18 +4,10 @@ import todo_img from '../../../assets/todo.jpeg'
 
 function Todos(props) {
     return (
-        <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-md-6 image-container'>
-
-                </div>
-                <div className='col-md-6 p-4'>
-                    <h2 className='fs-2 fw-bold text-center'>Your Todos</h2>
-                    {props.todos.length === 0 ? "No more todos" : props.todos.map((todo) => {
-                        return <Todo key={todo.sno} todo={todo} onDelete={props.onDelete} />
-                    })}
-                </div>
-            </div>
+        <div className='rounded p-4 m-2 feature-card' style={{ background: '#d6f5d6' }}>
+            {props.todos.length === 0 ? "No more todos" : props.todos.map((todo) => {
+                return <Todo key={todo.sno} todo={todo} onDelete={props.onDelete} />
+            })}
         </div>
     )
 }

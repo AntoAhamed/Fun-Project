@@ -30,7 +30,7 @@ const RockPaperScissors = () => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 border border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
+                <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
                     <h1 className='fs-1 fw-bold text-center mb-3'>Rock Paper Scissors</h1>
                     <h4>Details:</h4>
                     <p>
@@ -56,7 +56,7 @@ const RockPaperScissors = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light'>
                         <h2 className='fs-2 fw-bolder mb-3'>Rock Paper Scissors</h2>
                         <div className='mb-3'>
                             {options.map((option, index) => (

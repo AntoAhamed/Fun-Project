@@ -32,13 +32,17 @@ const TicTacToe = () => {
         return null;
     };
 
+    const handleReset = () => {
+        setBoard(Array(9).fill(null))
+    }
+
     const winner = calculateWinner(board);
     let status = winner ? `Winner: ${winner}` : `Next player: ${isXNext ? 'X' : 'O'}`;
 
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 border border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
+                <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
                     <h1 className='fs-1 fw-bold text-center mb-3'>Tic Tac Toe</h1>
                     <h4>Details:</h4>
                     <p>
@@ -64,7 +68,7 @@ const TicTacToe = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light py-5 px-3'>
                         <h2 className='fs-2 fw-bolder mb-3'>Tic Tac Toe</h2>
                         <div className='mb-3' style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 100px)', gap: '10px' }}>
                             {board.map((value, index) => (
@@ -78,6 +82,7 @@ const TicTacToe = () => {
                             ))}
                         </div>
                         <p className='fs-5 fw-semibold'>{status}</p>
+                        <button className='btn btn-primary rounded-pill' onClick={handleReset}>Reset</button>
                     </div>
                 </div>
             </div>

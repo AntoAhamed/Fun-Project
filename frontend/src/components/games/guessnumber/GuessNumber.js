@@ -1,26 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const GuessNumber = () => {
     const [targetNumber, setTargetNumber] = useState(Math.floor(Math.random() * 10) + 1);
     const [guess, setGuess] = useState('');
     const [message, setMessage] = useState('');
+    const [finished, setFinished] = useState(false);
+    const [chances, setChances] = useState(3);
 
     const handleGuess = () => {
-        const num = parseInt(guess);
-        if (num === targetNumber) {
-            setMessage('Congratulations! You guessed the number. I guessed another number for you. Lets see who won this time.');
-            setTargetNumber(Math.floor(Math.random() * 10) + 1);
-        } else if (num < targetNumber) {
-            setMessage('Too low! Try again.');
+        const num = parseInt(guess)
+
+        if (chances > 0) {
+            if (num === targetNumber) {
+                setMessage('Congratulations! You guessed the number.')
+                setFinished(true)
+            } else {
+                setChances(chances - 1)
+
+                if (chances === 0) {
+                    setMessage(`You failed! ${chances} chances left`)
+                    setFinished(true)
+                } else {
+                    setMessage(`You have ${chances} chances left`)
+                }
+            }
         } else {
-            setMessage('Too high! Try again.');
+            setMessage(`You failed! ${chances} chances left`)
+            setFinished(true)
         }
-    };
+    }
+
+    const handlePlayAgain = () => {
+        setTargetNumber(Math.floor(Math.random() * 10) + 1)
+        setMessage('')
+        setFinished(false)
+        setChances(3)
+    }
+
+    useEffect(() => {
+        setMessage(`You have ${chances} chances`)
+    }, [])
 
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 border border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
+                <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
                     <h1 className='fs-1 fw-bold text-center mb-3'>Guess The Number</h1>
                     <h4>Details:</h4>
                     <p>
@@ -46,7 +70,7 @@ const GuessNumber = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light '>
                         <h2 className='fs-2 fw-bolder mb-3'>Guess That Number!</h2>
                         <h5 className='mb-3'>Enter your guess below</h5>
                         <div>
@@ -57,7 +81,10 @@ const GuessNumber = () => {
                                 onChange={(e) => setGuess(e.target.value)}
                                 placeholder="Enter your guess"
                             />
-                            <button className='btn btn-primary rounded-pill mb-3' onClick={handleGuess}>Submit</button>
+                            {!finished ?
+                                <button className='btn btn-primary rounded-pill mb-3' onClick={handleGuess}>Submit</button> :
+                                <button className='btn btn-primary rounded-pill mb-3' onClick={handlePlayAgain}>Play Again</button>
+                            }
                             <p>{message}</p>
                         </div>
                     </div>

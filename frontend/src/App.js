@@ -20,7 +20,6 @@ import EditNotes from './components/offline/notepad/EditNotes'
 import Calculator from './components/offline/calculator/Calculator'
 
 import AddTodos from './components/offline/todolist/AddTodos'
-import Todos from './components/offline/todolist/Todos'
 
 import Weather from './components/online/weather/Weather'
 
@@ -42,6 +41,15 @@ import CurrencyConverter from './components/offline/currency_converter/CurrencyC
 import Reminder from './components/offline/reminder/Reminder'
 
 function App() {
+  //Current Time
+  const [time, setTime] = useState(new Date())
+
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setTime(new Date())
+    }, 1000)
+  }, [])
+
   //Notepad
   let initNotes;
   if (localStorage.getItem("notes") === null) {
@@ -56,18 +64,8 @@ function App() {
   const [toEditNote, setToEditNote] = useState({})
   const [newTitle, setNewTitle] = useState('')
   const [newDesc, setNewDesc] = useState('')
-  const [time, setTime] = useState("loading...")
-  const [date, setDate] = useState('loading...')
   const [alert, setAlert] = useState(false)
   const [alertMssg, setAlertMssg] = useState('')
-
-  const updateTimeAndDate = () => {
-    const d = new Date();
-    setTime(d.toLocaleTimeString());
-    setDate(d.toLocaleDateString());
-  }
-
-  setInterval(updateTimeAndDate, 1000);
 
   //function to add note
   const addNotes = (e) => {
@@ -86,8 +84,8 @@ function App() {
         sno: sno + 1,
         title: noteTitle,
         desc: noteDesc,
-        date: date,
-        time: time
+        date: time.toLocaleDateString(),
+        time: time.toLocaleTimeString()
       }
 
       setNotes([...notes, newNote]);
@@ -145,8 +143,8 @@ function App() {
         sno: sno + 1,
         title: newTitle,
         desc: newDesc,
-        date: date,
-        time: time
+        date: time.toLocaleDateString(),
+        time: time.toLocaleTimeString()
       }
 
       tmpNotes.push(editedNote);
@@ -239,25 +237,23 @@ function App() {
       {alert === true ? <Alert alertMssg={alertMssg} /> : ''}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Navbar time={time}/>}>
             <Route index element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
 
-            <Route path='/alarm' element={<Alarm />} />
-            <Route path='/clock' element={<Clock />} />
+            <Route path='/alarm' element={<Alarm time={time} />} />
             <Route path='/stopwatch' element={<Stopwatch />} />
             <Route path='/timer' element={<Timer />} />
-            <Route path='/reminder' element={<Reminder />} />
+            <Route path='/reminder' element={<Reminder time={time} />} />
 
             <Route path='/calculator' element={<Calculator />} />
 
-            <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} date={date} time={time} />} />
-            <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} date={date} time={time} />} />
-            <Route path="/editNotes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} date={date} time={time} />} />
+            <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
+            <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
+            <Route path="/editNotes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} time={time} />} />
 
-            <Route path='/writeTodos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} />} />
-            <Route path='/todos' element={<Todos todos={todos} onDelete={onDelete} />} />
+            <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
 
             <Route path='/cgpa-calculator' element={<CGPACalculator />} />
 

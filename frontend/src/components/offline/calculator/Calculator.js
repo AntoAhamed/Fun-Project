@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cal_img from '../../../assets/calculator.jpeg'
+import clock_img from '../../../assets/clock.jpeg'
 
 const Calculator = () => {
     const [input, setInput] = useState('');  // Stores the input from the user
@@ -27,12 +27,12 @@ const Calculator = () => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 image-container'>
-
+            <div className='col-md-6 d-flex justify-content-center align-items-center'>
+                    <img src={clock_img} alt='' className='rounded h-75 w-75' />
                 </div>
                 <div className='col-md-6 text-container'>
-                    <div className='feature-card'>
-                        <div style={styles.calculator}>
+                    <div className='feature-card p-0'>
+                        <div style={styles.calculator} className='bg-light'>
                             <div style={styles.display}>
                                 <h1>{input || "0"}</h1>  {/* Displays current input or 0 */}
                             </div>

@@ -1,10 +1,11 @@
 /* Start */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #E8E7D5;
 }
 
 .navbar {
-    background-color: rgb(53, 134, 13);
+    background-color: #4DB33D;
 }
 
 .nav-link {
@@ -33,7 +34,7 @@ body {
 }
 
 .feature-card:hover {
-    box-shadow: 10px 10px 5px rgb(238, 236, 241);
+    box-shadow: 10px 10px 5px grey;
 }
 
 .form-control:focus,

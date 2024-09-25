@@ -4,28 +4,28 @@ function Home() {
   return (
     <div className='container-fluid'>
       <div className='row'>
-        <div className='col-6'>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Alarm</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Clock</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Stopwatch</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Timer</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Calculator</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Timer</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Notepad</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Todo List</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>CGPA Calculator</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Currency Converter</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Weather</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Joke</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Guess Number</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Quiz</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Roke Paper Scissors</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Puzzle</p>
-          <p className='border rounded-pill px-4 py-2 m-2 fs-5'>Tic Tac Toe</p>
-        </div>
-        <div className='col-6 bg-secondary d-flex flex-column justify-content-center align-items-center border rounded'>
-          <h1 className='fw-bold mt-4 mb-4'>{'<'}Welcome To Toolbox{' />'}</h1>
+        <div className='col-md-6 bg-secondary d-flex flex-column justify-content-center align-items-center border rounded py-5'>
+          <h1 className='fw-bold mt-4 mb-4'>{'<'}Welcome To ToolBox{' />'}</h1>
           <p className='text-light'>You can get things by facing amazing challanges</p>
+        </div>
+        <div className='col-md-6 p-5'>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Alarm</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Clock</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Stopwatch</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Timer</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Calculator</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Timer</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Notepad</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Todo List</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>CGPA Calculator</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Currency Converter</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Weather</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Joke</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Guess Number</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Quiz</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Roke Paper Scissors</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Puzzle</p>
+          <p className='border rounded-pill px-4 py-2 m-2 fs-5 bg-light'>Tic Tac Toe</p>
         </div>
       </div>
     </div>

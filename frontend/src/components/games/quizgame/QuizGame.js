@@ -61,7 +61,7 @@ const QuizGame = () => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-                <div className='col-md-6 border border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
+                <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
                     <h1 className='fs-1 fw-bold text-center mb-3'>Eazy Quiz</h1>
                     <h4>Details:</h4>
                     <p>
@@ -87,7 +87,7 @@ const QuizGame = () => {
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>
                 {started ? <div className='col-md-6 text-container d-flex flex-row'>
-                    <div className='border border-5 rounded text-center feature-card'>
+                    <div className='border border-5 rounded text-center feature-card bg-light'>
                         <h2 className='fs-2 fw-bolder mb-3'>Eazy Quiz</h2>
                         {!finished ? (
                             <div>
@@ -107,7 +107,7 @@ const QuizGame = () => {
                     </div>
                 </div> :
                     <div className='col-md-6 p-3'>
-                        <div className='border border-2 rounded p-3'>
+                        <div className='border border-2 rounded p-3 bg-light'>
                             <h2 className='fs-2 fw-bolder text-center mb-3'>Set Questions</h2>
                             <input
                                 className='form-control mb-3'
@@ -117,7 +117,7 @@ const QuizGame = () => {
                                 placeholder='Enter Question'
                             />
                             <div className='row mb-3'>
-                                <div className='col-3'>
+                                <div className='col-md-3 mb-2'>
                                     <input
                                         className='form-control'
                                         type='text'
@@ -126,7 +126,7 @@ const QuizGame = () => {
                                         placeholder='Enter Option 1'
                                     />
                                 </div>
-                                <div className='col-3'>
+                                <div className='col-md-3 mb-2'>
                                     <input
                                         className='form-control'
                                         type='text'
@@ -135,7 +135,7 @@ const QuizGame = () => {
                                         placeholder='Enter Option 2'
                                     />
                                 </div>
-                                <div className='col-3'>
+                                <div className='col-md-3 mb-2'>
                                     <input
                                         className='form-control'
                                         type='text'
@@ -144,7 +144,7 @@ const QuizGame = () => {
                                         placeholder='Enter Option 3'
                                     />
                                 </div>
-                                <div className='col-3'>
+                                <div className='col-md-3 mb-2'>
                                     <input
                                         className='form-control'
                                         type='text'
@@ -164,20 +164,20 @@ const QuizGame = () => {
                                 </div>
                             </div>
                             <div className='mb-3'>
-                                <button className='btn btn-primary rounded-pill' onClick={handleAddQuestion}>Add Question</button>
-                                <button className='btn btn-primary rounded-pill mx-2' onClick={handleSubmit}>Submit</button>
-                                <button className='btn btn-primary rounded-pill' onClick={handleResetQuestions}>Reset Questions</button>
+                                <button className='btn btn-primary rounded-pill mb-2' onClick={handleAddQuestion}>Add Question</button>
+                                <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={handleSubmit}>Start Quiz</button>
+                                <button className='btn btn-primary rounded-pill mb-2' onClick={handleResetQuestions}>Reset Questions</button>
                             </div>
-                            <span className='text-center mb-3'>(Click Submit without setting questions to take quiz with default questions)</span>
+                            <span className='text-center mb-3'>(Click <b>'Start Quiz'</b> without setting questions to take quiz with default questions)</span>
                             <hr />
                             <h2 className='fs-2 fw-bold text-center mb-3'>Questions</h2>
                             {questions.length > 0? questions.map((question, index) => (
-                                <div key={index}>
+                                <div key={index} className='mb-2'>
                                     <h4 className='fs-4 fw-bold m-2'>Q {index + 1}. {question.question}</h4>
-                                    <div className='d-flex'>
-                                        <p className='m-2'>Options:</p>
+                                    <div className='row p-2'>
+                                        <p className='col-md-4'>Options:</p>
                                         {question.options.map((option, index) => (
-                                            <p key={index} className='m-2'>{option}</p>
+                                            <p key={index} className='col-md-2'>{index+1}. {option}</p>
                                         ))}
                                     </div>
                                     <h5 className='m-2'>Answer: {question.answer}</h5>
