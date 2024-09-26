@@ -2,26 +2,7 @@ import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
 const Stopwatch = (props) => {
-    const {mode} = props;
-    const [time, setTime] = useState(0);
-    const [isRunning, setIsRunning] = useState(false);
-
-    useEffect(() => {
-        let interval;
-        if (isRunning) {
-            interval = setInterval(() => {
-                setTime((prevTime) => prevTime + 1);
-            }, 1000);
-        }
-        return () => clearInterval(interval);
-    }, [isRunning]);
-
-    const startStopwatch = () => setIsRunning(true);
-    const stopStopwatch = () => setIsRunning(false);
-    const resetStopwatch = () => {
-        setIsRunning(false);
-        setTime(0);
-    };
+    const {mode, time, formatTime, startStopwatch, isRunning, stopStopwatch, resetStopwatch} = props;
 
     return (
         <div className='container-fluid'>
@@ -47,12 +28,6 @@ const Stopwatch = (props) => {
             </div>
         </div>
     );
-};
-
-const formatTime = (timeInSeconds) => {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = timeInSeconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 };
 
 export default Stopwatch;

@@ -31,10 +31,7 @@ import RokePaperScissors from './components/games/rockpaperscissors/RockPaperSci
 import SlidingPuzzle from './components/games/slidingpuzzle/SlidingPuzzle'
 import TicTacToe from './components/games/tictactoe/TicTacToe'
 
-import AffirmationGenerator from './components/online/affirmation/Affirmation'
-import FactGenerator from './components/online/fact/Fact'
 import JokeGenerator from './components/online/joke/Joke'
-import MotivationalQuoteGenerator from './components/online/motivationalquote/MotivationalQuote'
 import QuoteGenerator from './components/online/quote/Quote'
 import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
 import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
@@ -50,6 +47,161 @@ function App() {
       setTime(new Date())
     }, 1000)
   }, [])
+
+
+
+
+
+  //Alarm
+  const [alarmTime, setAlarmTime] = useState("");
+  const [message, setMessage] = useState("");
+
+  const resetAlarm = () => {
+    setAlarmTime("")
+    setMessage("")
+  }
+
+  useEffect(() => {
+    if (alarmTime && time.toLocaleTimeString('en-GB').slice(0, 5) === alarmTime) {
+      setMessage("Time's up! Alarm is ringing.");
+    }
+  }, [alarmTime, time]);
+
+
+
+
+
+  //Stopwatch
+  const [timeOfStopwatch, setTimeOfStopwatch] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+
+  useEffect(() => {
+    let interval;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTimeOfStopwatch((prevTime) => prevTime + 1);
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning]);
+
+  const startStopwatch = () => setIsRunning(true);
+  const stopStopwatch = () => setIsRunning(false);
+  const resetStopwatch = () => {
+    setIsRunning(false);
+    setTimeOfStopwatch(0);
+  };
+
+  const formatTime = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+
+
+
+
+  //Timer
+  const [timeOfTimer, setTimeOfTimer] = useState(0);  // Time in seconds
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    if (isTimerRunning && timeOfTimer > 0) {
+      timer = setInterval(() => {
+        setTimeOfTimer(time => time - 1);  // Decrease time by 1 second
+      }, 1000);
+    } else if (time === 0) {
+      setIsTimerRunning(false);
+    }
+    return () => clearInterval(timer);
+  }, [isTimerRunning, timeOfTimer]);
+
+  const startTimer = () => {
+    if (timeOfTimer > 0) {
+      setIsTimerRunning(true);
+    }
+  };
+
+  const stopTimer = () => {
+    setIsTimerRunning(false);
+  };
+
+  const resetTimer = () => {
+    setTimeOfTimer(0);
+    setIsTimerRunning(false);
+  };
+
+  // Helper function to format the time in mm:ss
+  const formatTimeOfTimer = (timeInSeconds) => {
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = timeInSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+
+
+
+
+  //Reminder
+  const [reminderText, setReminderText] = useState('');
+  const [reminderTime, setReminderTime] = useState('');
+  const [reminders, setReminders] = useState([]);
+
+  // Load reminders from localStorage when the component mounts
+  useEffect(() => {
+    //const savedReminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    //setReminders(savedReminders);
+  }, []);
+
+  // Save reminders to localStorage whenever the reminders state changes
+  useEffect(() => {
+    //localStorage.setItem('reminders', JSON.stringify(reminders));
+  }, [reminders]);
+
+  // Add a new reminder
+  const addReminder = () => {
+    if (reminderText && reminderTime) {
+      const newReminder = {
+        text: reminderText,
+        time: reminderTime,
+        id: time,
+      };
+      setReminders([...reminders, newReminder]);
+      setReminderText('');
+      setReminderTime('');
+    } else {
+      window.alert("Please enter both a reminder and time.");
+    }
+  };
+
+  // Remove a reminder
+  const removeReminder = (id) => {
+    const updatedReminders = reminders.filter((reminder) => reminder.id !== id);
+    setReminders(updatedReminders);
+  };
+
+  // Display the time left for each reminder
+  const calculateTimeLeft = (reminderTime) => {
+    const now = time;
+    const targetTime = new Date(reminderTime);
+    const difference = targetTime - now;
+
+    if (difference <= 0) {
+      return 'Time is up!';
+    } else {
+      const minutes = Math.floor(difference / 60000);
+      const seconds = Math.floor((difference % 60000) / 1000);
+      return `${minutes} min ${seconds} sec left`;
+    }
+  };
+
+
+
+
+
+  //Another
 
   //Notepad
   let initNotes;
@@ -251,20 +403,19 @@ function App() {
 
   return (
     <div className="App">
-      {alert === true ? <Alert alertMssg={alertMssg} /> : ''}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode}/>}>
-            <Route index element={<Home mode={mode}/>} />
+          <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode} alert={alert} alertMssg={alertMssg} />}>
+            <Route index element={<Home mode={mode} />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
 
-            <Route path='/alarm' element={<Alarm time={time} mode={mode} />} />
-            <Route path='/stopwatch' element={<Stopwatch mode={mode}/>} />
-            <Route path='/timer' element={<Timer mode={mode}/>} />
-            <Route path='/reminder' element={<Reminder time={time} mode={mode}/>} />
+            <Route path='/alarm' element={<Alarm time={time} mode={mode} alarmTime={alarmTime} setAlarmTime={setAlarmTime} message={message} setMessage={setMessage} resetAlarm={resetAlarm} />} />
+            <Route path='/stopwatch' element={<Stopwatch mode={mode} time={timeOfStopwatch} formatTime={formatTime} startStopwatch={startStopwatch} isRunning={isRunning} stopStopwatch={stopStopwatch} resetStopwatch={resetStopwatch} />} />
+            <Route path='/timer' element={<Timer mode={mode} time={timeOfTimer} setTime={setTimeOfTimer} formatTime={formatTimeOfTimer} startTimer={startTimer} isRunning={isTimerRunning} stopTimer={stopTimer} resetTimer={resetTimer} />} />
+            <Route path='/reminder' element={<Reminder time={time} mode={mode} reminders={reminders} addReminder={addReminder} removeReminder={removeReminder} reminderText={reminderText} setReminderText={setReminderText} reminderTime={reminderTime} setReminderTime={setReminderTime} calculateTimeLeft={calculateTimeLeft} />} />
 
-            <Route path='/calculator' element={<Calculator mode={mode}/>} />
+            <Route path='/calculator' element={<Calculator mode={mode} />} />
 
             <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
@@ -272,7 +423,7 @@ function App() {
 
             <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
 
-            <Route path='/cgpa-calculator' element={<CGPACalculator mode={mode}/>} />
+            <Route path='/cgpa-calculator' element={<CGPACalculator mode={mode} />} />
 
             <Route path='/currency-converter' element={<CurrencyConverter mode={mode} />} />
 
@@ -280,10 +431,7 @@ function App() {
 
             <Route path='/weather' element={<Weather />} />
             <Route path='/news' element={<News />} />
-            <Route path='/affirmation' element={<AffirmationGenerator />} />
-            <Route path='/fact' element={<FactGenerator />} />
             <Route path='/joke' element={<JokeGenerator />} />
-            <Route path='/motivational-quote' element={<MotivationalQuoteGenerator />} />
             <Route path='/random-quote' element={<QuoteGenerator />} />
 
             <Route path='/guess-number' element={<GuessNumber />} />

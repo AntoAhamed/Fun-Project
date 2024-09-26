@@ -92,11 +92,14 @@ const Calendar = () => {
     const isSameMonth = (d1, d2) => format(d1, 'MM-yyyy') === format(d2, 'MM-yyyy');
 
     return (
-        <div className="container my-5 border border-3 border-secondary rounded">
-            {renderHeader()}
-            <div className='border border-light text-dark mb-2' style={{background: 'aliceblue'}}>
-                {renderDays()}
-                {renderCells()}
+        <div>
+            <h1 className='fs- fw-bold text-center my-3'>Calendar</h1>
+            <div className="container border border-3 border-secondary rounded">
+                {renderHeader()}
+                <div className='border border-light text-dark mb-2' style={{ background: 'aliceblue' }}>
+                    {renderDays()}
+                    {renderCells()}
+                </div>
             </div>
         </div>
     );

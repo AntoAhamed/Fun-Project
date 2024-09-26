@@ -60,7 +60,7 @@ const RockPaperScissors = () => {
                         <h2 className='fs-2 fw-bolder mb-3'>Rock Paper Scissors</h2>
                         <div className='mb-3'>
                             {options.map((option, index) => (
-                                <button className='btn btn-outline-primary rounded-pill m-2' key={index} onClick={() => playGame(option)}>
+                                <button className='btn btn-primary rounded-pill m-2' key={index} onClick={() => playGame(option)}>
                                     {option}
                                 </button>
                             ))}

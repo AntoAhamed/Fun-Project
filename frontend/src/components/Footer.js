@@ -4,7 +4,8 @@ function Footer() {
   return (
     <div className='text-end m-2 p-4 w-75'>
       <hr />
-      &copy; All copyrights are reserved by us under copyright act 2024.
+      <div>&copy; Developed by Md. Nazirul Mobin Ahamed (B.Sc. in CSE).</div>
+      <div>Contact: <a href='https://www.linkedin.com/in/nazirulmobin' target='_new'>Click to Message me in Linkedin</a></div>
     </div>
   )
 }

@@ -35,18 +35,18 @@ const Calculator = (props) => {
                 <div className='col-md-6 text-container'>
                     <div className='feature-card p-0'>
                         <div style={styles.calculator} className={`bg-${mode}`}>
-                            <div style={styles.display} className={`text-${mode}`}>
+                            <div style={styles.display} className="text-dark">
                                 <h1>{input || "0"}</h1>  {/* Displays current input or 0 */}
                             </div>
                             <div style={styles.buttons}>
                                 <button onClick={clearInput} style={styles.button}>C</button>
-                                <button onClick={currectInput} style={styles.button}>x</button>
-                                <button style={styles.button}>%</button>
+                                <button onClick={currectInput} style={styles.button}>del</button>
+                                <button onClick={clearInput} style={styles.button}>CE</button>
                                 <button onClick={() => handleClick('/')} style={styles.button}>/</button>
                                 <button onClick={() => handleClick('7')} style={styles.button}>7</button>
                                 <button onClick={() => handleClick('8')} style={styles.button}>8</button>
                                 <button onClick={() => handleClick('9')} style={styles.button}>9</button>
-                                <button onClick={() => handleClick('*')} style={styles.button}>*</button>
+                                <button onClick={() => handleClick('*')} style={styles.button}>X</button>
                                 <button onClick={() => handleClick('4')} style={styles.button}>4</button>
                                 <button onClick={() => handleClick('5')} style={styles.button}>5</button>
                                 <button onClick={() => handleClick('6')} style={styles.button}>6</button>

@@ -12,7 +12,7 @@ function Notes(props) {
                 <hr />
             </div>
             <div className="row rounded m-2" style={{ background: '#d6f5d6' }}>
-                {notes.length === 0 ? <p className='p-2'>No notes to show.</p> : notes.map((note) => {
+                {notes.length === 0 ? <p className='p-2 text-dark'>No notes to show.</p> : notes.map((note) => {
                     return <Note key={note.sno} note={note} title={note.title} desc={note.desc} date={note.date} time={note.time} deleteNotes={deleteNotes} editNotes={editNotes} />
                 })}
             </div>

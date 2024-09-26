@@ -2,21 +2,7 @@ import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
 const Alarm = (props) => {
-    const { time, mode } = props;
-
-    const [alarmTime, setAlarmTime] = useState("");
-    const [message, setMessage] = useState("");
-
-    const resetAlarm = () => {
-        setAlarmTime("")
-        setMessage("")
-    }
-
-    useEffect(() => {
-        if (alarmTime && time.toLocaleTimeString('en-GB').slice(0, 5) === alarmTime) {
-            setMessage("Time's up! Alarm is ringing.");
-        }
-    }, [alarmTime, time]);
+    const { time, mode, alarmTime, setAlarmTime, message, setMessage, resetAlarm } = props;
 
     return (
         <div className='container-fluid'>

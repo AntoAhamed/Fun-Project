@@ -66,10 +66,10 @@ function Weather() {
                             </div>
                         </div>
                         <div className='row mt-3'>
-                            <p className='col-md-3 border border-3 rounded m-2 p-1 text-center'>Wind Speed: {currentData.current?.wind_kph}km/h</p>
-                            <p className='col-md-3 border border-3 rounded m-2 p-1 text-center'>Humidity: {currentData.current?.humidity}%</p>
-                            <p className='col-md-3 border border-3 rounded m-2 p-1 text-center'>Visibility: {currentData.current?.vis_km}km</p>
-                            <p className='col-md-3 border border-3 rounded m-2 p-1 text-center'>Pressure: {currentData.current?.pressure_mb}mb</p>
+                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Wind Speed: {currentData.current?.wind_kph}km/h</p>
+                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Humidity: {currentData.current?.humidity}%</p>
+                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Visibility: {currentData.current?.vis_km}km</p>
+                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Pressure: {currentData.current?.pressure_mb}mb</p>
                         </div>
                     </div>
                 </div>

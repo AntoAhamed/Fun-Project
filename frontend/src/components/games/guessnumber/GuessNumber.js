@@ -15,7 +15,7 @@ const GuessNumber = () => {
                 setMessage('Congratulations! You guessed the number.')
                 setFinished(true)
             } else {
-                setChances(chances - 1)
+                setChances(chances-1)
 
                 if (chances === 0) {
                     setMessage(`You failed! ${chances} chances left`)
@@ -31,14 +31,15 @@ const GuessNumber = () => {
     }
 
     const handlePlayAgain = () => {
-        setTargetNumber(Math.floor(Math.random() * 10) + 1)
+        setTargetNumber(Math.floor(Math.random() * 100) + 1)
         setMessage('')
         setFinished(false)
         setChances(3)
+        setGuess('')
     }
 
     useEffect(() => {
-        setMessage(`You have ${chances} chances`)
+        setMessage(`You have 1 free try & ${chances} chances`)
     }, [])
 
     return (
@@ -72,7 +73,7 @@ const GuessNumber = () => {
                 <div className='col-md-6 text-container'>
                     <div className='border border-5 rounded text-center feature-card bg-light text-dark'>
                         <h2 className='fs-2 fw-bolder mb-3'>Guess That Number!</h2>
-                        <h5 className='mb-3'>Enter your guess below</h5>
+                        <h5 className='mb-3'>Enter your guess below (1-100)</h5>
                         <div>
                             <input
                                 className='form-control text-center fs-4 mb-3'

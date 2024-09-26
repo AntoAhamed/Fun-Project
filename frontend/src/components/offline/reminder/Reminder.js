@@ -2,59 +2,7 @@ import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
 const ReminderApp = (props) => {
-    const { time, mode } = props;
-
-    const [reminderText, setReminderText] = useState('');
-    const [reminderTime, setReminderTime] = useState('');
-    const [reminders, setReminders] = useState([]);
-
-    // Load reminders from localStorage when the component mounts
-    useEffect(() => {
-        //const savedReminders = JSON.parse(localStorage.getItem('reminders')) || [];
-        //setReminders(savedReminders);
-    }, []);
-
-    // Save reminders to localStorage whenever the reminders state changes
-    useEffect(() => {
-        //localStorage.setItem('reminders', JSON.stringify(reminders));
-    }, [reminders]);
-
-    // Add a new reminder
-    const addReminder = () => {
-        if (reminderText && reminderTime) {
-            const newReminder = {
-                text: reminderText,
-                time: reminderTime,
-                id: time,
-            };
-            setReminders([...reminders, newReminder]);
-            setReminderText('');
-            setReminderTime('');
-        } else {
-            alert("Please enter both a reminder and time.");
-        }
-    };
-
-    // Remove a reminder
-    const removeReminder = (id) => {
-        const updatedReminders = reminders.filter((reminder) => reminder.id !== id);
-        setReminders(updatedReminders);
-    };
-
-    // Display the time left for each reminder
-    const calculateTimeLeft = (reminderTime) => {
-        const now = time;
-        const targetTime = new Date(reminderTime);
-        const difference = targetTime - now;
-
-        if (difference <= 0) {
-            return 'Time is up!';
-        } else {
-            const minutes = Math.floor(difference / 60000);
-            const seconds = Math.floor((difference % 60000) / 1000);
-            return `${minutes} min ${seconds} sec left`;
-        }
-    };
+    const { time, mode, reminders, addReminder, removeReminder, reminderText, setReminderText, reminderTime, setReminderTime, calculateTimeLeft } = props;
 
     return (
         <div className='container-fluid'>

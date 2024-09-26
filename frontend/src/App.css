@@ -46,3 +46,8 @@ body {
     border: 1px solid rgb(184, 184, 184);
     box-shadow: none;
 }
+
+.navbar-toggler:focus,
+.form-check-input:focus {
+    box-shadow: none;
+}
