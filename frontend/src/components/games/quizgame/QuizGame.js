@@ -1,62 +1,7 @@
 import React, { useState } from 'react';
 
-const QuizGame = () => {
-    const [questions, setQuestions] = useState([
-        { question: 'What is the capital of France?', options: ['Berlin', 'Madrid', 'Paris', 'Rome'], answer: 'Paris' },
-        { question: 'Which planet is known as the Red Planet?', options: ['Earth', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
-        { question: 'Who wrote "Hamlet"?', options: ['Shakespeare', 'Tolstoy', 'Hemingway', 'Austen'], answer: 'Shakespeare' },
-    ]);
-
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
-    const [finished, setFinished] = useState(false);
-    const [started, setStarted] = useState(false);
-
-    const [question, setQuestion] = useState('');
-    const [option1, setOption1] = useState('');
-    const [option2, setOption2] = useState('');
-    const [option3, setOption3] = useState('');
-    const [option4, setOption4] = useState('');
-    const [answer, setAnswer] = useState('');
-
-    const handleAnswer = (option) => {
-        if (option === questions[currentQuestion].answer) {
-            setScore(score + 1);
-        }
-        if (currentQuestion + 1 < questions.length) {
-            setCurrentQuestion(currentQuestion + 1);
-        } else {
-            setFinished(true);
-        }
-    };
-
-    const handleAddQuestion = () => {
-        setQuestions([...questions, { question: question, options: [option1, option2, option3, option4], answer: answer }]);
-        setQuestion('')
-        setOption1('')
-        setOption2('')
-        setOption3('')
-        setOption4('')
-        setAnswer('')
-    }
-
-    const handleSubmit = () => {
-        setStarted(true)
-    }
-
-    const handleResetQuestions = () => {
-        setQuestions([])
-    }
-
-    const handleReset = () => {
-        setQuestions([
-            { question: 'What is the capital of France?', options: ['Berlin', 'Madrid', 'Paris', 'Rome'], answer: 'Paris' },
-            { question: 'Which planet is known as the Red Planet?', options: ['Earth', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
-            { question: 'Who wrote "Hamlet"?', options: ['Shakespeare', 'Tolstoy', 'Hemingway', 'Austen'], answer: 'Shakespeare' },
-        ]);
-        setFinished(false);
-        setStarted(false);
-    }
+const QuizGame = (props) => {
+    const { questions, currentQuestion, score, started, finished, question, setQuestion, option1, setOption1, option2, setOption2, option3, setOption3, option4, setOption4, answer, setAnswer, handleAddQuestion, handleRemoveQuestion, handleAnswer, handleReset, handleResetQuestions, handleSubmit } = props;
 
     return (
         <div className='container-fluid'>
@@ -171,16 +116,19 @@ const QuizGame = () => {
                             <span className='text-center mb-3'>(Click <b>'Start Quiz'</b> without setting questions to take quiz with default questions)</span>
                             <hr />
                             <h2 className='fs-2 fw-bold text-center mb-3'>Questions</h2>
-                            {questions.length > 0? questions.map((question, index) => (
+                            {questions.length > 0 ? questions.map((question, index) => (
                                 <div key={index} className='mb-2'>
                                     <h4 className='fs-4 fw-bold m-2'>Q {index + 1}. {question.question}</h4>
                                     <div className='row p-2'>
                                         <p className='col-md-4'>Options:</p>
                                         {question.options.map((option, index) => (
-                                            <p key={index} className='col-md-2'>{index+1}. {option}</p>
+                                            <p key={index} className='col-md-2'>{index + 1}. {option}</p>
                                         ))}
                                     </div>
-                                    <h5 className='m-2'>Answer: {question.answer}</h5>
+                                    <div className='d-flex justify-content-between'>
+                                        <h5 className='m-2'>Answer: {question.answer}</h5>
+                                        <button className='btn btn-danger btn-sm rounded-pill m-2' onClick={()=>handleRemoveQuestion(question)}>Remove</button>
+                                    </div>
                                 </div>
                             )) : "No questions to show"}
                         </div>

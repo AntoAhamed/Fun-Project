@@ -112,7 +112,10 @@ function App() {
       timer = setInterval(() => {
         setTimeOfTimer(time => time - 1);  // Decrease time by 1 second
       }, 1000);
-    } else if (time === 0) {
+    } else if (timeOfTimer === 0) {
+      if (isTimerRunning) {
+        window.alert("Time's up!")
+      }
       setIsTimerRunning(false);
     }
     return () => clearInterval(timer);
@@ -183,7 +186,7 @@ function App() {
   };
 
   // Display the time left for each reminder
-  const calculateTimeLeft = (reminderTime) => {
+  const calculateTimeLeft = (reminderTime, reminderText) => {
     const now = time;
     const targetTime = new Date(reminderTime);
     const difference = targetTime - now;
@@ -196,6 +199,18 @@ function App() {
       return `${minutes} min ${seconds} sec left`;
     }
   };
+
+
+
+
+
+  //function to show alert when needed
+  const alertSystem = () => {
+    setAlert(true);
+    setTimeout(() => {
+      setAlert(false);
+    }, 3000);
+  }
 
 
 
@@ -245,7 +260,7 @@ function App() {
       setNoteTitle('');
       setNoteDesc('');
 
-      setAlertMssg("Note added successfully.");
+      setAlertMssg("Note saved successfully.");
       alertSystem();
     } else {
       setAlertMssg("Title and description can't be blank.");
@@ -266,6 +281,9 @@ function App() {
   //function to delete note
   const deleteNotes = (note) => {
     setNotes(notes.filter((e) => { return e !== note; })) //filter note from existing notes
+
+    setAlertMssg("Note successfully removed.");
+    alertSystem();
   }
 
   //function to edit note
@@ -316,14 +334,6 @@ function App() {
     }
   }
 
-  //function to show alert when needed
-  const alertSystem = () => {
-    setAlert(true);
-    setTimeout(() => {
-      setAlert(false);
-    }, 3000);
-  }
-
   //everytime when notes will change, it renders and current notes will be saved in the local storage.
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -362,9 +372,13 @@ function App() {
       setTodoDesc('');
 
       localStorage.setItem("todos", JSON.stringify(todos));
+
+      setAlertMssg("Todo saved successfully.");
+      alertSystem();
     }
     else {
-      alert("Title or Description can't be blank");
+      setAlertMssg("Title or Description can't be blank");
+      alertSystem();
     }
   }
 
@@ -376,6 +390,9 @@ function App() {
     )
 
     localStorage.setItem("todos", JSON.stringify(todos));
+
+    setAlertMssg("Todo successfully removed.");
+    alertSystem();
   }
 
   const [todos, setTodos] = useState(initTodo);
@@ -384,6 +401,10 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos])
   //Todolist end
+
+
+
+
 
   //Color mode
   const [mode, setMode] = useState("light");
@@ -399,6 +420,76 @@ function App() {
       document.body.style.backgroundColor = "#3f3e42";
       document.body.style.color = "white";
     }
+  }
+
+
+
+
+
+  //Quiz
+  const [questions, setQuestions] = useState([
+    { question: 'What is the capital of France?', options: ['Berlin', 'Madrid', 'Paris', 'Rome'], answer: 'Paris' },
+    { question: 'Which planet is known as the Red Planet?', options: ['Earth', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
+    { question: 'Who wrote "Hamlet"?', options: ['Shakespeare', 'Tolstoy', 'Hemingway', 'Austen'], answer: 'Shakespeare' },
+  ]);
+
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [started, setStarted] = useState(false);
+
+  const [question, setQuestion] = useState('');
+  const [option1, setOption1] = useState('');
+  const [option2, setOption2] = useState('');
+  const [option3, setOption3] = useState('');
+  const [option4, setOption4] = useState('');
+  const [answer, setAnswer] = useState('');
+
+  const handleAnswer = (option) => {
+    if (option === questions[currentQuestion].answer) {
+      setScore(score + 1);
+    }
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setFinished(true);
+    }
+  };
+
+  const handleAddQuestion = () => {
+    setQuestions([...questions, { question: question, options: [option1, option2, option3, option4], answer: answer }]);
+    setQuestion('')
+    setOption1('')
+    setOption2('')
+    setOption3('')
+    setOption4('')
+    setAnswer('')
+  }
+
+  const handleRemoveQuestion = (question) => {
+    setQuestions(
+      questions.filter((e) => {
+        return e !== question;
+      })
+    )
+  }
+
+  const handleSubmit = () => {
+    setStarted(true)
+  }
+
+  const handleResetQuestions = () => {
+    setQuestions([])
+  }
+
+  const handleReset = () => {
+    setQuestions([
+      { question: 'What is the capital of France?', options: ['Berlin', 'Madrid', 'Paris', 'Rome'], answer: 'Paris' },
+      { question: 'Which planet is known as the Red Planet?', options: ['Earth', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
+      { question: 'Who wrote "Hamlet"?', options: ['Shakespeare', 'Tolstoy', 'Hemingway', 'Austen'], answer: 'Shakespeare' },
+    ]);
+    setFinished(false);
+    setStarted(false);
   }
 
   return (
@@ -435,7 +526,7 @@ function App() {
             <Route path='/random-quote' element={<QuoteGenerator />} />
 
             <Route path='/guess-number' element={<GuessNumber />} />
-            <Route path='/quiz' element={<QuizGame />} />
+            <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />
             <Route path='/roke-paper-scissors' element={<RokePaperScissors />} />
             <Route path='/puzzle' element={<SlidingPuzzle />} />
             <Route path='/tic-tac-toe' element={<TicTacToe />} />

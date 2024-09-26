@@ -4,7 +4,7 @@ function Alert(props) {
     const { alertMssg } = props;
 
     return (
-        <div className="alert alert-warning m-0" role="alert">
+        <div className="alert alert-success m-0" role="alert">
             {alertMssg}
         </div>
     )
