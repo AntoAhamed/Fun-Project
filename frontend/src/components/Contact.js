@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Contact() {
+function Contact(props) {
+    const {mode} = props;
+    
     return (
         <div className='container'>
             <div className='row mb-3'>
@@ -8,7 +10,7 @@ function Contact() {
                     <b>Contact With Us</b>
                 </div>
             </div>
-            <div className='row mb-3'>
+            <div className={`row mb-3 bg-${mode}`}>
                 <div className='col fs-5 p-4'>
                     <p>
                         Thank you for your interest in <strong>Toolbox</strong> I'd love to hear from you and am here to help with any questions, comments or concerns you may have.

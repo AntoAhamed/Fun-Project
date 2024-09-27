@@ -93,7 +93,6 @@ const Calendar = () => {
 
     return (
         <div>
-            <h1 className='fs- fw-bold text-center my-3'>Calendar</h1>
             <div className="container border border-3 border-secondary rounded">
                 {renderHeader()}
                 <div className='border border-light text-dark mb-2' style={{ background: 'aliceblue' }}>

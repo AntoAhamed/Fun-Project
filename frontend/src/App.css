@@ -29,7 +29,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .feature-card {
@@ -48,6 +47,7 @@ body {
 }
 
 .navbar-toggler:focus,
-.form-check-input:focus {
+.form-check-input:focus,
+.accordion-button:focus {
     box-shadow: none;
 }

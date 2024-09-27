@@ -1,6 +1,8 @@
 import React from 'react'
 
-function About() {
+function About(props) {
+    const {mode} = props;
+
     return (
         <div className='container'>
             <div className='row mb-3'>
@@ -8,7 +10,7 @@ function About() {
                     <b>Know About Our Story</b>
                 </div>
             </div>
-            <div className='row mb-3'>
+            <div className={`row mb-3 bg-${mode}`}>
                 <div className='col fs-5 p-4'>
                     <p>
                         Welcome to <strong>Toolbox</strong>, a toolkit application designed to help you stay organized and productive.

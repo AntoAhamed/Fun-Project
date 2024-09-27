@@ -66,7 +66,7 @@ const Navbar = (props) => {
         setOnlineActive(null)
         setGameActive("active")
     }
-    
+
     /*const navigate = useNavigate()
 
     const handleLogout = () => {
@@ -107,20 +107,15 @@ const Navbar = (props) => {
                                     Offline Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/alarm">Alarm</Link></li>
-                                    <li><Link class="dropdown-item" to="/stopwatch">Stopwatch</Link></li>
-                                    <li><Link class="dropdown-item" to="/timer">Timer</Link></li>
                                     <li><Link class="dropdown-item" to="/reminder">Reminder</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/calculator">Calculator</Link></li>
+                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
                                     <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/writeNotes">Add Notes</Link></li>
+                                    <li><Link class="dropdown-item" to="/write-notes">Add Notes</Link></li>
                                     <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/todos">Todos List</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/calendar">Calendar</Link></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -128,8 +123,6 @@ const Navbar = (props) => {
                                     Online Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/random-quote">Quote</Link></li>

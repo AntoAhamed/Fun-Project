@@ -497,9 +497,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode} alert={alert} alertMssg={alertMssg} />}>
-            <Route index element={<Home mode={mode} />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
+            <Route index element={<Home mode={mode}
+              //alarm  
+              time={time} alarmTime={alarmTime} setAlarmTime={setAlarmTime} message={message} setMessage={setMessage} resetAlarm={resetAlarm}
+              //stopwatch
+              timeOfStopwatch={timeOfStopwatch} formatTime={formatTime} startStopwatch={startStopwatch} isRunning={isRunning} stopStopwatch={stopStopwatch} resetStopwatch={resetStopwatch}
+              //timer
+              timeOfTimer={timeOfTimer} setTimeOfTimer={setTimeOfTimer} formatTimeOfTimer={formatTimeOfTimer} startTimer={startTimer} isTimerRunning={isTimerRunning} stopTimer={stopTimer} resetTimer={resetTimer}
+            />} />
+            <Route path='/about' element={<About mode={mode} />} />
+            <Route path='/contact' element={<Contact mode={mode} />} />
 
             <Route path='/alarm' element={<Alarm time={time} mode={mode} alarmTime={alarmTime} setAlarmTime={setAlarmTime} message={message} setMessage={setMessage} resetAlarm={resetAlarm} />} />
             <Route path='/stopwatch' element={<Stopwatch mode={mode} time={timeOfStopwatch} formatTime={formatTime} startStopwatch={startStopwatch} isRunning={isRunning} stopStopwatch={stopStopwatch} resetStopwatch={resetStopwatch} />} />
@@ -508,9 +515,9 @@ function App() {
 
             <Route path='/calculator' element={<Calculator mode={mode} />} />
 
-            <Route path="/writeNotes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
+            <Route path="/write-notes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
-            <Route path="/editNotes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} time={time} />} />
+            <Route path="/edit-notes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} time={time} />} />
 
             <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
 

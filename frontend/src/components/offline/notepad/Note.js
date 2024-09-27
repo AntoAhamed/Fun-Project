@@ -16,7 +16,7 @@ function note(props) {
                                 On {date} at {time}
                             </div>
                             <div>
-                                <Link to="/editNotes" onClick={() => { editNotes(note) }}>
+                                <Link to="/edit-notes" onClick={() => { editNotes(note) }}>
                                     <button type='button' className='btn btn-sm btn-primary rounded-pill mx-4 mb-2'>
                                         edit
                                     </button>

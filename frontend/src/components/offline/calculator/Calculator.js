@@ -29,10 +29,7 @@ const Calculator = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row'>
-            <div className='col-md-6 d-flex justify-content-center align-items-center'>
-                    <img src={clock_img} alt='' className='rounded h-75 w-75' />
-                </div>
-                <div className='col-md-6 text-container'>
+                <div className='col text-container'>
                     <div className='feature-card p-0'>
                         <div style={styles.calculator} className={`bg-${mode}`}>
                             <div style={styles.display} className="text-dark">

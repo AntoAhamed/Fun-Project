@@ -26,6 +26,11 @@ const CGPACalculator = (props) => {
         setCgpa(result.toFixed(2));
     };
 
+    const handleReset = () => {
+        setGrades([])
+        setCgpa(null)
+    }
+
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -37,11 +42,12 @@ const CGPACalculator = (props) => {
                         <div className='d-flex flex-column align-items-center mt-4'>
                             <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
                             {grades.map((grade, index) => (
-                                <p key={index} className='fs-4'>S: {grade.subject} - C: {grade.credit} - G: {grade.gradePoint}</p>
+                                <p key={index}>S: {grade.subject} - C: {grade.credit} - G: {grade.gradePoint}</p>
                             ))}
                             <InputForm addGrade={addGrade} />
                             <button className='btn btn-primary rounded-pill mb-2' onClick={calculateCGPA}>Calculate CGPA</button>
                             {cgpa && <Results cgpa={cgpa} />}
+                            {grades.length > 0 && <button className='btn btn-sm btn-primary rounded-pill mb-2' onClick={handleReset}>Reset</button>}
                         </div>
                     </div>
                 </div>
