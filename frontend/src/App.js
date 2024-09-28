@@ -38,6 +38,8 @@ import CurrencyConverter from './components/offline/currency_converter/CurrencyC
 import Reminder from './components/offline/reminder/Reminder'
 import Calendar from './components/offline/calendar/Calendar'
 
+import Dashboard from './components/user/dashboard'
+
 function App() {
   //Initialization
   let initToolbox;
@@ -572,8 +574,10 @@ function App() {
             <Route path='/guess-number' element={<GuessNumber coins={coins} setCoins={setCoins} />} />
             <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />
             <Route path='/roke-paper-scissors' element={<RokePaperScissors coins={coins} setCoins={setCoins} />} />
-            <Route path='/puzzle' element={<SlidingPuzzle coins={coins} setCoins={setCoins} />} />
+            <Route path='/puzzle' element={<SlidingPuzzle />} />
             <Route path='/tic-tac-toe' element={<TicTacToe />} />
+
+            <Route path='/dashboard' element={<Dashboard initToolbox={initToolbox}/>} />
           </Route>
         </Routes>
       </BrowserRouter>

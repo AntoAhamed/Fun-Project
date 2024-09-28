@@ -13,6 +13,7 @@ const Navbar = (props) => {
     const [offlineActive, setOfflineActive] = useState(null);
     const [onlineActive, setOnlineActive] = useState(null);
     const [gameActive, setGameActive] = useState(null);
+    const [dashboardActive, setDashboardActive] = useState(null);
 
     const activateHome = () => {
         setHomeActive("active")
@@ -21,6 +22,7 @@ const Navbar = (props) => {
         setOfflineActive(null)
         setOnlineActive(null)
         setGameActive(null)
+        setDashboardActive(null)
     }
 
     const activateAbout = () => {
@@ -30,6 +32,7 @@ const Navbar = (props) => {
         setOfflineActive(null)
         setOnlineActive(null)
         setGameActive(null)
+        setDashboardActive(null)
     }
 
     const activateContact = () => {
@@ -39,6 +42,7 @@ const Navbar = (props) => {
         setOfflineActive(null)
         setOnlineActive(null)
         setGameActive(null)
+        setDashboardActive(null)
     }
 
     const activateOffline = () => {
@@ -48,6 +52,7 @@ const Navbar = (props) => {
         setOfflineActive("active")
         setOnlineActive(null)
         setGameActive(null)
+        setDashboardActive(null)
     }
 
     const activateOnline = () => {
@@ -57,6 +62,7 @@ const Navbar = (props) => {
         setOfflineActive(null)
         setOnlineActive("active")
         setGameActive(null)
+        setDashboardActive(null)
     }
 
     const activateGame = () => {
@@ -66,6 +72,17 @@ const Navbar = (props) => {
         setOfflineActive(null)
         setOnlineActive(null)
         setGameActive("active")
+        setDashboardActive(null)
+    }
+
+    const activateDashboard = () => {
+        setHomeActive(null)
+        setAboutActive(null)
+        setContactActive(null)
+        setOfflineActive(null)
+        setOnlineActive(null)
+        setGameActive(null)
+        setDashboardActive("active")
     }
 
     /*const navigate = useNavigate()
@@ -152,6 +169,9 @@ const Navbar = (props) => {
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/tic-tac-toe">Tic Tac Toe</Link></li>
                                 </ul>
+                            </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link text-${mode} ${dashboardActive}`} onClick={activateDashboard} aria-current="page" to="/dashboard">Dashboard</Link>
                             </li>
                         </ul>
                         <div className='mx-5 d-flex'>

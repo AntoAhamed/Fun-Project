@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const RockPaperScissors = () => {
+const RockPaperScissors = (props) => {
     const options = ['Rock', 'Paper', 'Scissors'];
     const [userChoice, setUserChoice] = useState('');
     const [computerChoice, setComputerChoice] = useState('');
@@ -21,8 +21,10 @@ const RockPaperScissors = () => {
             (user === 'Paper' && computer === 'Rock') ||
             (user === 'Scissors' && computer === 'Paper')
         ) {
-            setResult('You win!');
+            props.setCoins((prevState)=>prevState+5)
+            setResult('You win! Got a reward of 5 coins.');
         } else {
+            props.setCoins((prevState)=>prevState-1.25)
             setResult('You lose!');
         }
     };

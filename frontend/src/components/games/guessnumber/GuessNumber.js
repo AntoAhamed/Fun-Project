@@ -10,29 +10,24 @@ const GuessNumber = (props) => {
     const handleGuess = () => {
         const num = parseInt(guess)
 
-        if (chances > 0) {
-            if (num === targetNumber) {
-                setMessage('Congratulations! You guessed the number. Get a rewared of 5 coins.')
-                props.setCoins((prevState)=>prevState+5);
-                setFinished(true)
-            } else {
-                setChances(chances-1)
+        if (chances > 0 && num === targetNumber) {
+            setMessage('Congratulations! You guessed the number. Got a reward of 5 coins.')
+            props.setCoins((prevState) => prevState + 5);
+            setFinished(true)
+        } else if (chances > 0 && num !== targetNumber) {
+            setChances((prevChances)=>prevChances - 1)
+            setMessage(`You have ${chances} chances left`)
+        }
 
-                if (chances === 0) {
-                    setMessage(`You failed! ${chances} chances left`)
-                    setFinished(true)
-                } else {
-                    setMessage(`You have ${chances} chances left`)
-                }
-            }
-        } else {
+        if (chances === 0) {
             setMessage(`You failed! ${chances} chances left`)
+            props.setCoins((prevState) => prevState - 1.25);
             setFinished(true)
         }
     }
 
     const handlePlayAgain = () => {
-        setTargetNumber(Math.floor(Math.random() * 100) + 1)
+        setTargetNumber(Math.floor(Math.random() * 10) + 1)
         setMessage('')
         setFinished(false)
         setChances(3)
@@ -40,7 +35,7 @@ const GuessNumber = (props) => {
     }
 
     useEffect(() => {
-        setMessage(`You have 1 free try & ${chances} chances`)
+        setMessage(`You have 1 try & ${chances} chances.`)
     }, [])
 
     return (
@@ -74,7 +69,7 @@ const GuessNumber = (props) => {
                 <div className='col-md-6 text-container'>
                     <div className='border border-5 rounded text-center feature-card bg-light text-dark'>
                         <h2 className='fs-2 fw-bolder mb-3'>Guess That Number!</h2>
-                        <h5 className='mb-3'>Enter your guess below (1-100)</h5>
+                        <h5 className='mb-3'>Enter your guess below (1-10)</h5>
                         <div>
                             <input
                                 className='form-control text-center fs-4 mb-3'
@@ -88,7 +83,7 @@ const GuessNumber = (props) => {
                                 <button className='btn btn-primary rounded-pill mb-3' onClick={handlePlayAgain}>Play Again</button>
                             }
                             <p>{message}</p>
-                            <p>{targetNumber}</p>
+                            {finished && <p>The number was: {targetNumber}</p>}
                         </div>
                     </div>
                 </div>
