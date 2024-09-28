@@ -65,9 +65,9 @@ const RockPaperScissors = () => {
                                 </button>
                             ))}
                         </div>
-                        <p>Your choice: {userChoice}</p>
-                        <p>Computer's choice: {computerChoice}</p>
-                        <p>{result}</p>
+                        <p className='fs-4'>Your choice: <b>{userChoice}</b></p>
+                        <p className='fs-4'>Computer's choice: <b>{computerChoice}</b></p>
+                        <p className='fs-5 fw-bold'>{result}</p>
                     </div>
                 </div>
             </div>

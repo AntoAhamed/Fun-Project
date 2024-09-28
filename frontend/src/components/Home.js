@@ -36,7 +36,7 @@ function Home(props) {
         </div>*/}
       </div >
       <div className='row p-3'>
-        <div className='container-fluid toolbox border border-secondary rounded p-4'>
+        <div className={`container-fluid toolbox ${mode === "dark" && "border border-secondary"} rounded p-4`} style={{background: `${mode === "light" ? "wheat" : ""}`}}>
           <div className='row mb-2'>
             <div className='col'>
               <h3 className='fs-3 fw-bold'>ToolBox Kit Pack</h3>

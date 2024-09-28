@@ -11,7 +11,7 @@ function About(props) {
                 </div>
             </div>
             <div className={`row mb-3 bg-${mode}`}>
-                <div className='col fs-5 p-4'>
+                <div className='col fs-6 p-5'>
                     <p>
                         Welcome to <strong>Toolbox</strong>, a toolkit application designed to help you stay organized and productive.
                     </p>

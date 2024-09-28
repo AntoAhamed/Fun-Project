@@ -39,6 +39,39 @@ import Reminder from './components/offline/reminder/Reminder'
 import Calendar from './components/offline/calendar/Calendar'
 
 function App() {
+  //Initialization
+  let initToolbox;
+  if (localStorage.getItem("toolbox") === null) {
+    initToolbox = {
+      name: 'Guest',
+      bio: '',
+      coins: 1000,
+      notes: [],
+      questions: [],
+      reminders: [],
+      todos: []
+    };
+  } else {
+    initToolbox = JSON.parse(localStorage.getItem("toolbox"));
+  }
+
+
+
+
+
+  const [name, setName] = useState(initToolbox.name)
+  const [bio, setBio] = useState(initToolbox.bio)
+  const [coins, setCoins] = useState(initToolbox.coins)
+
+  useEffect(()=>{
+    initToolbox.coins = coins;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[coins])
+
+
+
+
+
   //Current Time
   const [time, setTime] = useState(new Date())
 
@@ -152,17 +185,6 @@ function App() {
   const [reminderTime, setReminderTime] = useState('');
   const [reminders, setReminders] = useState([]);
 
-  // Load reminders from localStorage when the component mounts
-  useEffect(() => {
-    //const savedReminders = JSON.parse(localStorage.getItem('reminders')) || [];
-    //setReminders(savedReminders);
-  }, []);
-
-  // Save reminders to localStorage whenever the reminders state changes
-  useEffect(() => {
-    //localStorage.setItem('reminders', JSON.stringify(reminders));
-  }, [reminders]);
-
   // Add a new reminder
   const addReminder = () => {
     if (reminderText && reminderTime) {
@@ -200,6 +222,11 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    initToolbox.reminders = reminders;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  }, [reminders]);
+
 
 
 
@@ -219,16 +246,16 @@ function App() {
   //Another
 
   //Notepad
-  let initNotes;
+  /*let initNotes;
   if (localStorage.getItem("notes") === null) {
     initNotes = [];
   } else {
     initNotes = JSON.parse(localStorage.getItem("notes"));
-  }
+  }*/
 
   const [noteTitle, setNoteTitle] = useState('')
   const [noteDesc, setNoteDesc] = useState('')
-  const [notes, setNotes] = useState(initNotes)
+  const [notes, setNotes] = useState(initToolbox.notes)
   const [toEditNote, setToEditNote] = useState({})
   const [newTitle, setNewTitle] = useState('')
   const [newDesc, setNewDesc] = useState('')
@@ -336,18 +363,23 @@ function App() {
 
   //everytime when notes will change, it renders and current notes will be saved in the local storage.
   useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
+    initToolbox.notes = notes;
+    localStorage.setItem("toolbox", JSON.stringify(initToolbox));
   }, [notes])
   //Notepad end
 
+
+
+
+
   //Todolist
-  let initTodo;
+  /*let initTodo;
   if (localStorage.getItem("todos") === null) {
     initTodo = [];
   }
   else {
     initTodo = JSON.parse(localStorage.getItem("todos"));
-  }
+  }*/
 
   const [todoTitle, setTodoTitle] = useState('');
   const [todoDesc, setTodoDesc] = useState('');
@@ -371,8 +403,6 @@ function App() {
       setTodoTitle('');
       setTodoDesc('');
 
-      localStorage.setItem("todos", JSON.stringify(todos));
-
       setAlertMssg("Todo saved successfully.");
       alertSystem();
     }
@@ -389,16 +419,15 @@ function App() {
       })
     )
 
-    localStorage.setItem("todos", JSON.stringify(todos));
-
     setAlertMssg("Todo successfully removed.");
     alertSystem();
   }
 
-  const [todos, setTodos] = useState(initTodo);
+  const [todos, setTodos] = useState(initToolbox.todos);
 
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    initToolbox.todos = todos;
+    localStorage.setItem("toolbox", JSON.stringify(initToolbox));
   }, [todos])
   //Todolist end
 
@@ -457,13 +486,18 @@ function App() {
   };
 
   const handleAddQuestion = () => {
-    setQuestions([...questions, { question: question, options: [option1, option2, option3, option4], answer: answer }]);
-    setQuestion('')
-    setOption1('')
-    setOption2('')
-    setOption3('')
-    setOption4('')
-    setAnswer('')
+    if (question !== '' && option1 !== '' && option2 !== '' && option3 !== '' && option4 !== '' && answer !== '') {
+      setQuestions([...questions, { question: question, options: [option1, option2, option3, option4], answer: answer }]);
+      setQuestion('')
+      setOption1('')
+      setOption2('')
+      setOption3('')
+      setOption4('')
+      setAnswer('')
+    } else {
+      setAlertMssg("Any fields can't be empty.");
+      alertSystem();
+    }
   }
 
   const handleRemoveQuestion = (question) => {
@@ -492,11 +526,21 @@ function App() {
     setStarted(false);
   }
 
+  useEffect(() => {
+    initToolbox.questions = questions;
+    localStorage.setItem("toolbox", JSON.stringify(initToolbox));
+  }, [questions])
+
+
+
+
+
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode} alert={alert} alertMssg={alertMssg} />}>
+          <Route path="/" element={<Navbar time={time} changeMode={changeMode} mode={mode} alert={alert} alertMssg={alertMssg} coins={coins} />}>
             <Route index element={<Home mode={mode}
               //alarm  
               time={time} alarmTime={alarmTime} setAlarmTime={setAlarmTime} message={message} setMessage={setMessage} resetAlarm={resetAlarm}
@@ -508,12 +552,7 @@ function App() {
             <Route path='/about' element={<About mode={mode} />} />
             <Route path='/contact' element={<Contact mode={mode} />} />
 
-            <Route path='/alarm' element={<Alarm time={time} mode={mode} alarmTime={alarmTime} setAlarmTime={setAlarmTime} message={message} setMessage={setMessage} resetAlarm={resetAlarm} />} />
-            <Route path='/stopwatch' element={<Stopwatch mode={mode} time={timeOfStopwatch} formatTime={formatTime} startStopwatch={startStopwatch} isRunning={isRunning} stopStopwatch={stopStopwatch} resetStopwatch={resetStopwatch} />} />
-            <Route path='/timer' element={<Timer mode={mode} time={timeOfTimer} setTime={setTimeOfTimer} formatTime={formatTimeOfTimer} startTimer={startTimer} isRunning={isTimerRunning} stopTimer={stopTimer} resetTimer={resetTimer} />} />
             <Route path='/reminder' element={<Reminder time={time} mode={mode} reminders={reminders} addReminder={addReminder} removeReminder={removeReminder} reminderText={reminderText} setReminderText={setReminderText} reminderTime={reminderTime} setReminderTime={setReminderTime} calculateTimeLeft={calculateTimeLeft} />} />
-
-            <Route path='/calculator' element={<Calculator mode={mode} />} />
 
             <Route path="/write-notes" element={<AddNotes title={noteTitle} desc={noteDesc} setTitle={setNoteTitle} setDesc={setNoteDesc} addNotes={addNotes} clear={clear} time={time} />} />
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
@@ -525,17 +564,15 @@ function App() {
 
             <Route path='/currency-converter' element={<CurrencyConverter mode={mode} />} />
 
-            <Route path='/calendar' element={<Calendar />} />
-
             <Route path='/weather' element={<Weather />} />
-            <Route path='/news' element={<News />} />
+            {/*<Route path='/news' element={<News />} />*/}
             <Route path='/joke' element={<JokeGenerator />} />
             <Route path='/random-quote' element={<QuoteGenerator />} />
 
-            <Route path='/guess-number' element={<GuessNumber />} />
+            <Route path='/guess-number' element={<GuessNumber coins={coins} setCoins={setCoins} />} />
             <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />
-            <Route path='/roke-paper-scissors' element={<RokePaperScissors />} />
-            <Route path='/puzzle' element={<SlidingPuzzle />} />
+            <Route path='/roke-paper-scissors' element={<RokePaperScissors coins={coins} setCoins={setCoins} />} />
+            <Route path='/puzzle' element={<SlidingPuzzle coins={coins} setCoins={setCoins} />} />
             <Route path='/tic-tac-toe' element={<TicTacToe />} />
           </Route>
         </Routes>

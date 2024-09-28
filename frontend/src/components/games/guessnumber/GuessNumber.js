@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const GuessNumber = () => {
+const GuessNumber = (props) => {
     const [targetNumber, setTargetNumber] = useState(Math.floor(Math.random() * 10) + 1);
     const [guess, setGuess] = useState('');
     const [message, setMessage] = useState('');
@@ -12,7 +12,8 @@ const GuessNumber = () => {
 
         if (chances > 0) {
             if (num === targetNumber) {
-                setMessage('Congratulations! You guessed the number.')
+                setMessage('Congratulations! You guessed the number. Get a rewared of 5 coins.')
+                props.setCoins((prevState)=>prevState+5);
                 setFinished(true)
             } else {
                 setChances(chances-1)
@@ -87,6 +88,7 @@ const GuessNumber = () => {
                                 <button className='btn btn-primary rounded-pill mb-3' onClick={handlePlayAgain}>Play Again</button>
                             }
                             <p>{message}</p>
+                            <p>{targetNumber}</p>
                         </div>
                     </div>
                 </div>

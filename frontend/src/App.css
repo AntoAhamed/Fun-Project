@@ -37,7 +37,7 @@ body {
 }
 
 .feature-card:hover {
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 10px 5px rgb(239, 232, 243);
 }
 
 .form-control:focus,

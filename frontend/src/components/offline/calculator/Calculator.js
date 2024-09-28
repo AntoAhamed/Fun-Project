@@ -67,8 +67,8 @@ const Calculator = (props) => {
 
 const styles = {
     calculator: {
-        width: '360px',
-        margin: '3% auto',
+        width: '300px',
+        margin: '2% auto',
         border: '2px solid #ccc',
         padding: '20px',
         borderRadius: '10px',
@@ -76,8 +76,8 @@ const styles = {
         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
     },
     display: {
-        marginBottom: '20px',
-        padding: '10px',
+        marginBottom: '15px',
+        padding: '5px',
         backgroundColor: '#f0f0f0',
         borderRadius: '5px',
         boxShadow: 'inset 0px 2px 5px rgba(0, 0, 0, 0.1)'
@@ -85,11 +85,11 @@ const styles = {
     buttons: {
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '10px'
+        gap: '5px'
     },
     button: {
-        padding: '20px',
-        fontSize: '18px',
+        padding: '10px',
+        fontSize: '15px',
         backgroundColor: '#fff',
         border: '1px solid #ddd',
         borderRadius: '5px',

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom'
 import Clock from './offline/clock/Clock'
 import Alert from './offline/notepad/Alert'
+import Coin from '../assets/coin.png'
 
 const Navbar = (props) => {
-    const { time, changeMode, mode, alert, alertMssg } = props;
+    const { time, changeMode, mode, alert, alertMssg, coins } = props;
 
     const [homeActive, setHomeActive] = useState("active");
     const [aboutActive, setAboutActive] = useState(null);
@@ -153,6 +154,10 @@ const Navbar = (props) => {
                                 </ul>
                             </li>
                         </ul>
+                        <div className='mx-5 d-flex'>
+                            <img src={Coin} alt='' style={{width: '25px'}} />
+                            <div className='fs-5 fw-bold mx-2'>{coins} Pt</div>
+                        </div>
                         <div class="form-check form-switch fs-5">
                             <input class="form-check-input" onClick={changeMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                             <label class={`form-check-label text-${mode}`} for="flexSwitchCheckDefault">{mode === "dark" ? "Dark Mode" : "Light Mode"}</label>
