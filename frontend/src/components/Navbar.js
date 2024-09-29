@@ -122,7 +122,7 @@ const Navbar = (props) => {
                             </li>
                             <li class="nav-item dropdown">
                                 <Link class={`nav-link text-${mode} ${offlineActive} dropdown-toggle`} onClick={activateOffline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Offline Toolbox
+                                    Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
                                     <li><Link class="dropdown-item" to="/reminder">Reminder</Link></li>
@@ -134,26 +134,23 @@ const Navbar = (props) => {
                                     <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/todos">Todos List</Link></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
+                            {/*<li class="nav-item dropdown">
                                 <Link class={`nav-link text-${mode} ${onlineActive} dropdown-toggle`} onClick={activateOnline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Online Toolbox
                                 </Link>
                                 <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/joke">Joke</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/random-quote">Quote</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
-                                    {/*<li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/news">News</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>*/}
+                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>
                                 </ul>
-                            </li>
+                            </li>*/}
                             <li class="nav-item dropdown">
                                 <Link class={`nav-link text-${mode} ${gameActive} dropdown-toggle`} onClick={activateGame} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Games
@@ -180,7 +177,7 @@ const Navbar = (props) => {
                         </div>
                         <div class="form-check form-switch fs-5">
                             <input class="form-check-input" onClick={changeMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                            <label class={`form-check-label text-${mode}`} for="flexSwitchCheckDefault">{mode === "dark" ? "Dark Mode" : "Light Mode"}</label>
+                            <label class={`form-check-label text-${mode}`} for="flexSwitchCheckDefault">{mode === "dark" ? "Dark" : "Light"}</label>
                         </div>
                     </div>
                 </div>

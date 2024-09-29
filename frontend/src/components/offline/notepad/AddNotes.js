@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function AddNotes(props) {
   const { title, desc, setTitle, setDesc, addNotes, clear } = props;
+
+  const navigate = useNavigate()
+
+  const authCheck = () => {
+    const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+    if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+      navigate('/unlock')
+    }
+  }
+
+  useEffect(() => {
+    authCheck()
+  }, [])
 
   return (
     <div className='container-fluid border border-top-0 border-bottom-0'>

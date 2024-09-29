@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TicTacToe = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
@@ -38,6 +39,20 @@ const TicTacToe = () => {
 
     const winner = calculateWinner(board);
     let status = winner ? `Winner: ${winner}` : `Next player: ${isXNext ? 'X' : 'O'}`;
+
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
 
     return (
         <div className='container-fluid'>

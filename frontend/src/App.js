@@ -38,7 +38,10 @@ import CurrencyConverter from './components/offline/currency_converter/CurrencyC
 import Reminder from './components/offline/reminder/Reminder'
 import Calendar from './components/offline/calendar/Calendar'
 
-import Dashboard from './components/user/dashboard'
+import Dashboard from './components/user/Dashboard'
+import EditProfile from './components/user/EditProfile'
+import SetProfileLock from './components/user/SetProfileLock'
+import Unlock from './components/user/Unlock'
 
 function App() {
   //Initialization
@@ -47,11 +50,20 @@ function App() {
     initToolbox = {
       name: 'Guest',
       bio: '',
+      image: '',
       coins: 1000,
       notes: [],
       questions: [],
       reminders: [],
-      todos: []
+      todos: [],
+      isAvailable: {
+        edit: 0,
+        lock: 0,
+      },
+      auth: {
+        token: '',
+        isToken: ''
+      }
     };
   } else {
     initToolbox = JSON.parse(localStorage.getItem("toolbox"));
@@ -63,12 +75,41 @@ function App() {
 
   const [name, setName] = useState(initToolbox.name)
   const [bio, setBio] = useState(initToolbox.bio)
+  const [image, setImage] = useState(initToolbox.image)
   const [coins, setCoins] = useState(initToolbox.coins)
+
+  const [isAvailable, setIsAvailable] = useState(initToolbox.isAvailable)
+  const [auth, setAuth] = useState(initToolbox.auth)
+
+  useEffect(()=>{
+    initToolbox.name = name;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[name])
+
+  useEffect(()=>{
+    initToolbox.bio = bio;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[bio])
+
+  useEffect(()=>{
+    initToolbox.image = image;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[image])
 
   useEffect(()=>{
     initToolbox.coins = coins;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
   },[coins])
+
+  useEffect(()=>{
+    initToolbox.isAvailable = isAvailable;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[isAvailable])
+
+  useEffect(()=>{
+    initToolbox.auth = auth;
+    localStorage.setItem('toolbox', JSON.stringify(initToolbox));
+  },[auth])
 
 
 
@@ -568,8 +609,6 @@ function App() {
 
             <Route path='/weather' element={<Weather />} />
             {/*<Route path='/news' element={<News />} />*/}
-            <Route path='/joke' element={<JokeGenerator />} />
-            <Route path='/random-quote' element={<QuoteGenerator />} />
 
             <Route path='/guess-number' element={<GuessNumber coins={coins} setCoins={setCoins} />} />
             <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />
@@ -577,7 +616,10 @@ function App() {
             <Route path='/puzzle' element={<SlidingPuzzle />} />
             <Route path='/tic-tac-toe' element={<TicTacToe />} />
 
-            <Route path='/dashboard' element={<Dashboard initToolbox={initToolbox}/>} />
+            <Route path='/dashboard' element={<Dashboard initToolbox={initToolbox} alarmTime={alarmTime} isRunning={isRunning} isTimerRunning={isTimerRunning} isAvailable={isAvailable} setIsAvailable={setIsAvailable} auth={auth} setAuth={setAuth} />} />
+            <Route path='/edit-profile' element={<EditProfile name={name} setName={setName} bio={bio} setBio={setBio} image={image} setImage={setImage} />} />
+            <Route path='/set-profile-lock' element={<SetProfileLock auth={auth} setAuth={setAuth} />} />
+            <Route path='/unlock' element={<Unlock />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SlidingPuzzle = () => {
     const [tiles, setTiles] = useState([1, 2, 3, 4, 5, 6, 7, 8, 0]); // 0 represents the empty space
@@ -23,6 +24,20 @@ const SlidingPuzzle = () => {
             setTiles(newTiles);
         }
     };
+
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
 
     return (
         <div className='container-fluid'>

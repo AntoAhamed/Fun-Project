@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Alarm from './offline/alarm/Alarm';
 import Stopwatch from './offline/stopwatch/Stopwatch';
 import Timer from './offline/timer/Timer';
 import Calculator from './offline/calculator/Calculator';
 import Calendar from './offline/calendar/Calendar';
+import Quote from './online/quote/Quote'
+import Joke from './online/joke/Joke'
+import { useNavigate } from 'react-router-dom';
 
 function Home(props) {
   const { mode } = props;
+
+  const navigate = useNavigate()
+
+  const authCheck = () => {
+    const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+    if (toolbox?.auth.token !== '' && toolbox?.auth.isToken === '') {
+      navigate('/unlock')
+    }
+  }
+
+  useEffect(() => {
+    authCheck()
+  }, [])
 
   return (
     <div className='container-fluid'>
@@ -36,7 +53,7 @@ function Home(props) {
         </div>*/}
       </div >
       <div className='row p-3'>
-        <div className={`container-fluid toolbox ${mode === "dark" && "border border-secondary"} rounded p-4`} style={{background: `${mode === "light" ? "#94d78a" : ""}`}}>
+        <div className={`container-fluid toolbox ${mode === "dark" && "border border-secondary"} rounded p-4`} style={{ background: `${mode === "light" ? "#94d78a" : ""}` }}>
           <div className='row mb-2'>
             <div className='col'>
               <h3 className='fs-3 fw-bold'>ToolBox Kit Pack</h3>
@@ -51,11 +68,11 @@ function Home(props) {
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item bg-secondary">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                       Alarm
                     </button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <Alarm time={props.time} mode={mode} alarmTime={props.alarmTime} setAlarmTime={props.setAlarmTime} message={props.message} setMessage={props.setMessage} resetAlarm={props.resetAlarm} />
                     </div>
@@ -67,11 +84,11 @@ function Home(props) {
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item bg-secondary">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                       Stopwatch
                     </button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <Stopwatch mode={mode} time={props.timeOfStopwatch} formatTime={props.formatTime} startStopwatch={props.startStopwatch} isRunning={props.isRunning} stopStopwatch={props.stopStopwatch} resetStopwatch={props.resetStopwatch} />
                     </div>
@@ -83,11 +100,11 @@ function Home(props) {
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item bg-secondary">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                       Timer
                     </button>
                   </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <Timer mode={mode} time={props.timeOfTimer} setTime={props.setTimeOfTimer} formatTime={props.formatTimeOfTimer} startTimer={props.startTimer} isRunning={props.isTimerRunning} stopTimer={props.stopTimer} resetTimer={props.resetTimer} />
                     </div>
@@ -107,11 +124,11 @@ function Home(props) {
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item bg-secondary">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
                       Calculator
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <Calculator mode={mode} />
                     </div>
@@ -120,6 +137,14 @@ function Home(props) {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className={`row bg-${mode} py-3`}>
+        <div className='col-md-6 mb-3'>
+          <Quote mode={mode} />
+        </div>
+        <div className='col-md-6'>
+          <Joke mode={mode} />
         </div>
       </div>
     </div >

@@ -37,7 +37,7 @@ body {
 }
 
 .feature-card:hover {
-    box-shadow: 10px 10px 5px rgb(239, 232, 243);
+    box-shadow: 10px 10px 5px grey;
 }
 
 .form-control:focus,
@@ -50,4 +50,19 @@ body {
 .form-check-input:focus,
 .accordion-button:focus {
     box-shadow: none;
+}
+
+.btn-primary {
+    background: #0099ff;
+    border: 1px solid #0099ff;
+}
+
+.btn-danger {
+    background: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.btn-success {
+    background: #00cc00;
+    border: 1px solid #00cc00;
 }

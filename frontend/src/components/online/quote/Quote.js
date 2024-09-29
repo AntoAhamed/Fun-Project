@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import clock_img from '../../../assets/clock.jpeg'
 
-const QuoteGenerator = () => {
+const QuoteGenerator = (props) => {
     const quotes = [
         { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
         { quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
@@ -91,26 +91,11 @@ const QuoteGenerator = () => {
     }, []);
 
     return (
-        <div className='container-fluid'>
-            <div className='row'>
-            <div className='col-md-6 d-flex justify-content-center align-items-center'>
-                    <img src={clock_img} alt='' className='rounded h-75 w-75' />
-                </div>
-                <div className='col-md-6 text-container'>
-                    <div className='border border-5 rounded text-center feature-card bg-light'>
-                        <div class="card">
-                            <div className='card-header d-flex justify-content-between'>
-                                <h4 className='fw-bold'>Quote</h4>
-                                <button className='btn btn-sm btn-primary rounded-pill' onClick={fetchQuote}>Get New Quote</button>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-title">"{quote}"</p>
-                                <p class="card-text"> - {author}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className={`border border-5 rounded text-center feature-card bg-${props.mode}`}>
+            <h3 className='fs-3 fw-bold mb-3'>Quote</h3>
+            <p class="mb-3">"{quote}"</p>
+            <p class="mb-3"> - {author}</p>
+            <button className='btn btn-sm btn-primary rounded-pill mb-3' onClick={fetchQuote}>Get New Quote</button>
         </div>
     );
 };

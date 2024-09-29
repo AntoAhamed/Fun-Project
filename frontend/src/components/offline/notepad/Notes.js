@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Note from './Note'
+import { useNavigate } from 'react-router-dom';
 
 function Notes(props) {
     const { notes, deleteNotes, editNotes } = props;
     let pb = notes.length;
+
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
 
     return (
         <div className='container-fluid' style={pb > 2 ? { paddingBottom: "" } : { paddingBottom: "45vh" }}>

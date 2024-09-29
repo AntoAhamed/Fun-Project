@@ -18,6 +18,18 @@ function EditNotes(props) {
         navigate('/notes');
     }
 
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
+
     return (
         <div className='container-fluid border border-top-0 border-bottom-0'>
             <div className="row mb-2">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RockPaperScissors = (props) => {
     const options = ['Rock', 'Paper', 'Scissors'];
@@ -28,6 +29,20 @@ const RockPaperScissors = (props) => {
             setResult('You lose!');
         }
     };
+
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
 
     return (
         <div className='container-fluid'>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const GuessNumber = (props) => {
     const [targetNumber, setTargetNumber] = useState(Math.floor(Math.random() * 10) + 1);
@@ -34,7 +35,19 @@ const GuessNumber = (props) => {
         setGuess('')
     }
 
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
     useEffect(() => {
+        authCheck()
+
         setMessage(`You have 1 try & ${chances} chances.`)
     }, [])
 

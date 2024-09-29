@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const QuizGame = (props) => {
     const { questions, currentQuestion, score, started, finished, question, setQuestion, option1, setOption1, option2, setOption2, option3, setOption3, option4, setOption4, answer, setAnswer, handleAddQuestion, handleRemoveQuestion, handleAnswer, handleReset, handleResetQuestions, handleSubmit } = props;
+
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
 
     return (
         <div className='container-fluid'>

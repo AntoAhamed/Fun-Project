@@ -93,7 +93,7 @@ const Calendar = () => {
 
     return (
         <div>
-            <div className="container border border-3 border-secondary rounded">
+            <div className="container border border-3 border-secondary rounded bg-secondary">
                 {renderHeader()}
                 <div className='border border-light text-dark mb-2' style={{ background: 'aliceblue' }}>
                     {renderDays()}

@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Todos from './Todos'
+import { useNavigate } from 'react-router-dom';
 
 function AddTodos(props) {
+    const navigate = useNavigate()
+
+    const authCheck = () => {
+        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
+
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+            navigate('/unlock')
+        }
+    }
+
+    useEffect(() => {
+        authCheck()
+    }, [])
+
     return (
         <div className='container-fluid'>
             <div className="row mb-2">
