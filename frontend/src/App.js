@@ -104,12 +104,12 @@ function App() {
   useEffect(()=>{
     initToolbox.isAvailable = isAvailable;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[isAvailable.edit][isAvailable.lock])
+  },[isAvailable?.edit][isAvailable?.lock])
 
   useEffect(()=>{
     initToolbox.auth = auth;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[auth.token][auth.isToken])
+  },[auth?.token][auth?.isToken])
 
   const resetProfile = () => {
       setName('Guest')
