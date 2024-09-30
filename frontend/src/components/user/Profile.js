@@ -21,13 +21,14 @@ function Profile(props) {
             <p className='mb-3'>{props.initToolbox.bio === '' ? "Bio" : props.initToolbox.bio}</p>
             <div className='mb-3'>
                 <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={() => navigate('/edit-profile')}>Edit Profile</button>
-                <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={() => navigate('/set-profile-lock')}>Set Profile Lock</button>
-                <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={resetProfile}>Reset Profile</button>
+                <button className='btn btn-warning rounded-pill mx-2 mb-2' onClick={() => navigate('/set-profile-lock')}>Set Profile Lock</button>
+                <button className='btn btn-danger rounded-pill mx-2 mb-2' onClick={resetProfile}>Reset Profile</button>
             </div>
             {auth?.isToken !== '' ?
                 <div className='mb-3'>
                     <button className='btn btn-dark rounded-pill mb-2' onClick={lockProfile}>Lock Profile</button>
                 </div> : ''}
+            <p className='text-danger'>! After reset profile you can't undo this action.</p>
         </div>
     )
 }

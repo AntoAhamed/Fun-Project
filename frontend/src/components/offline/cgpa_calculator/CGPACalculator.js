@@ -77,9 +77,27 @@ const CGPACalculator = (props) => {
                     <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <div className='d-flex flex-column align-items-center mt-4'>
                             <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
-                            {grades.map((grade, index) => (
-                                <p key={index}>S: {grade.subject} - C: {grade.credit} - G: {grade.gradePoint}</p>
-                            ))}
+                            <table class="table border border-secondary">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Credit</th>
+                                        <th scope="col">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {grades.map((grade, index) => (
+                                        <tr key={index}>
+                                            <th scope="row">{index + 1}</th>
+                                            <td>{grade.subject}</td>
+                                            <td>{grade.credit}</td>
+                                            <td>{grade.gradePoint}</td>
+                                        </tr>
+                                    ))}
+
+                                </tbody>
+                            </table>
                             <InputForm addGrade={addGrade} />
                             <button className='btn btn-primary rounded-pill mb-2' onClick={calculateCGPA}>Calculate CGPA</button>
                             {cgpa && <Results cgpa={cgpa} />}
