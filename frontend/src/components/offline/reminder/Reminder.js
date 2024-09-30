@@ -23,28 +23,32 @@ const ReminderApp = (props) => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
-                    <h1 className='fs-1 fw-bold text-center mb-3'>Reminders</h1>
-                    <h4>Details:</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <h4>Instructions:</h4>
-                    <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
+                    <h1 className='fs-1 fw-bold text-center mb-3'>Reminder - User Guide</h1>
+                    <p>The Reminder feature allows users to set custom notifications based on specific dates and times, ensuring important tasks or events are not missed. Below are the detailed instructions for using this feature:</p>
+
+                    <h4>Key Features:</h4>
+                    <p>- Set Reminder Message: Users can define a specific message that describes the reminder (e.g., "Doctor's Appointment" or "Project Deadline").</p>
+                    <p>- Set Time and Date: Users can choose the exact date and time when they wish to receive the reminder notification.</p>
+                    <p>- Multiple Reminders: Users can add and manage multiple reminders, each with unique messages, times, and dates.</p>
+
+                    <h4>How to Use the Reminder Feature:</h4>
+                    <h5>1. Access the Reminder Section:</h5>
+                    <p>- Navigate to the "Reminder" feature in the application.</p>
+
+                    <h5>2. Adding a New Reminder:</h5>
+                    <p>- Step 1: Enter the <b>Reminder Message</b> in the input field (e.g., "Meeting with John").</p>
+                    <p>- Step 2: Select the <b>Date</b> and <b>Time</b> for when you want the reminder to trigger.</p>
+                    <p>- Step 3: Click the "Save Reminder" button to store your reminder.</p>
+
+                    <h5>3. Viewing and Managing Reminders:</h5>
+                    <p>- Your saved reminders will be displayed in a list.</p>
+                    <p>- Each reminder will show the <b>message</b>, <b>date</b> and <b>time</b>.</p>
+                    <p>- You can click on a reminder to <b>delete</b> it as needed.</p>
+
+                    <h5>4. Notifications:</h5>
+                    <p>- When the set date and time of a reminder is reached, the application will notify you with the corresponding message.</p>
+
+                    <p>This feature is designed to help users stay organized and keep track of important events in a timely manner.</p>
                 </div>
                 <div className='col-md-6 text-container'>
                     <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
@@ -70,7 +74,7 @@ const ReminderApp = (props) => {
                             />
                         </div>
                         <button className="btn btn-primary rounded-pill mt-3" onClick={addReminder}>
-                            Add Reminder
+                            Save Reminder
                         </button>
 
                         {/* Display the list of reminders */}

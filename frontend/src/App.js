@@ -638,7 +638,7 @@ function App() {
             <Route path='/puzzle' element={<SlidingPuzzle />} />
             <Route path='/tic-tac-toe' element={<TicTacToe />} />
 
-            <Route path='/dashboard' element={<Dashboard initToolbox={initToolbox} alarmTime={alarmTime} isRunning={isRunning} isTimerRunning={isTimerRunning} isAvailable={isAvailable} setIsAvailable={setIsAvailable} auth={auth} setAuth={setAuth} resetProfile={resetProfile} />} />
+            <Route path='/dashboard' element={<Dashboard initToolbox={initToolbox} alarmTime={alarmTime} isRunning={isRunning} isTimerRunning={isTimerRunning} coins={coins} setCoins={setCoins} isAvailable={isAvailable} setIsAvailable={setIsAvailable} auth={auth} setAuth={setAuth} resetProfile={resetProfile} />} />
             <Route path='/edit-profile' element={<EditProfile name={name} setName={setName} bio={bio} setBio={setBio} image={image} setImage={setImage} />} />
             <Route path='/set-profile-lock' element={<SetProfileLock auth={auth} setAuth={setAuth} />} />
             <Route path='/unlock' element={<Unlock auth={auth} setAuth={setAuth} />} />

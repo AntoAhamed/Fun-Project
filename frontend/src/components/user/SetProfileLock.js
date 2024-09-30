@@ -16,6 +16,10 @@ function SetProfileLock(props) {
         if (toolbox?.auth?.token !== '' && toolbox?.auth?.isToken === '') {
             navigate('/unlock')
         }
+
+        if(toolbox?.isAvailable?.lock === 0){
+            navigate('/dashboard')
+        }
     }
 
     useEffect(() => {
@@ -44,6 +48,14 @@ function SetProfileLock(props) {
         }
     }
 
+    const handleCancel = () => {
+        setCurrentPin('')
+        setNewPin('')
+        setMessage('')
+
+        navigate('/dashboard')
+    }
+
     return (
         <div className='border rounded p-5 bg-light text-dark' style={{ margin: '5% 20%' }}>
             <h1 className='fs-1 fw-bold mb-3'>Set Profile Lock</h1>
@@ -60,6 +72,7 @@ function SetProfileLock(props) {
                 <p className='fs-6 text-danger'>{message}</p>
                 <p className='fs-6 text-warning'>! After you confirm PIN, You need it to unlock your toolbox.</p>
                 <button type='submit' className='btn btn-success rounded-pill mb-2'>Confirm</button>
+                <button className='btn btn-dark rounded-pill mb-2 mx-2' onClick={handleCancel}>Cancel</button>
             </form>
         </div>
     )

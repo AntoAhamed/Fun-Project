@@ -50,28 +50,34 @@ const CGPACalculator = (props) => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
-                    <h1 className='fs-1 fw-bold text-center mb-3'>CGPA Calculator</h1>
-                    <h4>Details:</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <h4>Instructions:</h4>
-                    <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
+                    <h1 className='fs-1 fw-bold text-center mb-3'>CGPA Calculator - User Guide</h1>
+                    <p>The CGPA Calculator feature allows students to effortlessly calculate their Cumulative Grade Point Average (CGPA) based on their individual course grades and credit hours. This feature provides an efficient and accurate way to track academic performance over multiple semesters.</p>
+
+                    <h4>Key Features:</h4>
+                    <p>- Enter Course Details: Input the grade and credit hours for each course.</p>
+                    <p>- Multiple Semesters: Add courses from multiple semesters to calculate the overall CGPA.</p>
+                    <p>- Accurate Calculation: The system computes the CGPA based on your grades and the corresponding credit hours.</p>
+
+                    <h4>How to Use the CGPA Calculator:</h4>
+                    <h5>1. Access the CGPA Calculator Section:</h5>
+                    <p>- Navigate to the "CGPA Calculator" feature on the application.</p>
+
+                    <h5>2. Adding Course Information:</h5>
+                    <p>- Enter the Course Name (optional) for easy identification.</p>
+                    <p>- Input the Grade you achieved in the course (e.g., A, B, C, etc.).</p>
+                    <p>- Input the Credit Hours assigned to that course (e.g., 3, 4, etc.).</p>
+                    <p>- Click the "Add Course" button to save the course information.</p>
+
+                    <h5>3. Calculating CGPA:</h5>
+                    <p>- Once you have added all the courses for the semester, the calculator will automatically compute the CGPA based on your grades and credit hours.</p>
+                    <p>- The formul used is: </p>
+                    <p>- Repeat the process for multiple semesters to get an accurate overall CGPA</p>
+
+                    <h5>4. Viewing and Resetting:</h5>
+                    <p>- The calculated CGPA will be displayed immediately.</p>
+                    <p>- To reset the calculator or start over, simply click the "Reset" button to clear all fields.</p>
+
+                    <p>This CGPA calculator is an essential tool for students, providing a quick and accurate way to keep track of academic performance and ensure that you’re on track for your academic goals.</p>
                 </div>
                 <div className='col-md-6 text-container'>
                     <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>

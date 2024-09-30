@@ -28,29 +28,10 @@ function Home(props) {
   return (
     <div className='container-fluid'>
       <div className='row'>
-        <div className={`col bg-${mode === "light" ? "secondary" : ""} text-center p-5`}>
+        <div className={`col text-center p-5`} style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
           <h1 className='fw-bold mt-4 mb-4'>{'<'}Welcome To ToolBox{' />'}</h1>
-          <p className='text-light'>You can get things by facing amazing challanges</p>
+          <p>Use things, play games and unlock features.</p>
         </div>
-        {/*<div className=''>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Alarm</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Clock</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Stopwatch</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Timer</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Calculator</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Timer</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Notepad</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Todo List</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>CGPA Calculator</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Currency Converter</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Weather</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Joke</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Guess Number</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Quiz</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Roke Paper Scissors</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Puzzle</p>
-          <p className={`border rounded-pill px-4 py-2 m-2 fs-5 bg-${mode === "light" ? "light" : ""}`}>Tic Tac Toe</p>
-        </div>*/}
       </div >
       <div className='row p-3'>
         <div className={`container-fluid toolbox ${mode === "dark" && "border border-secondary"} rounded p-4`} style={{ background: `${mode === "light" ? "#94d78a" : ""}` }}>
@@ -61,12 +42,12 @@ function Home(props) {
             </div>
           </div>
           <div className='row mb-3'>
-            <Calendar />
+            <Calendar mode={mode} />
           </div>
           <div className='row mb-3'>
             <div className='col-md-4' >
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item bg-secondary">
+              <div class="accordion border-0" id="accordionExample">
+                <div class="accordion-item border-0" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                       Alarm
@@ -81,8 +62,8 @@ function Home(props) {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item bg-secondary">
+              <div class="accordion border-0" id="accordionExample">
+                <div class="accordion-item border-0" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
                       Stopwatch
@@ -97,8 +78,8 @@ function Home(props) {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item bg-secondary">
+              <div class="accordion border-0" id="accordionExample">
+                <div class="accordion-item border-0" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                       Timer
@@ -121,8 +102,8 @@ function Home(props) {
               <div className={`fs-3 fw-bold border border-3 border-secondary rounded p-4 my-3 bg-${mode === "light" ? "light" : ""}`}>Reminder</div>
             </div>
             <div className='col-md-6'>
-              <div class="accordion" id="accordionExample">
-                <div class="accordion-item bg-secondary">
+              <div class="accordion border-0" id="accordionExample">
+                <div class="accordion-item border-0" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
                       Calculator
@@ -139,7 +120,7 @@ function Home(props) {
           </div>
         </div>
       </div>
-      <div className={`row bg-${mode} py-3`}>
+      <div className={`row bg-${mode === "light" && mode} py-3`} style={{background: `${mode === "dark" && "#0d1a26"}`}}>
         <div className='col-md-6 mb-3'>
           <Quote mode={mode} />
         </div>

@@ -63,6 +63,10 @@ function EditProfile(props) {
         if (toolbox?.auth?.token !== '' && toolbox?.auth?.isToken === '') {
             navigate('/unlock')
         }
+
+        if(toolbox?.isAvailable?.edit === 0){
+            navigate('/dashboard')
+        }
     }
 
     useEffect(() => {

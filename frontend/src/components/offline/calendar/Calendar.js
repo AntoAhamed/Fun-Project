@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, addMonths, subMonths } from 'date-fns';
 
-const Calendar = () => {
+const Calendar = (props) => {
+    const {mode} = props
+    
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -93,7 +95,7 @@ const Calendar = () => {
 
     return (
         <div>
-            <div className="container border border-3 border-secondary rounded bg-secondary">
+            <div className="container border border-3 border-secondary rounded" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                 {renderHeader()}
                 <div className='border border-light text-dark mb-2' style={{ background: 'aliceblue' }}>
                     {renderDays()}

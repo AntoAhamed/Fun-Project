@@ -39,38 +39,52 @@ function Weather() {
 
     useEffect(() => {
         authCheck()
-        
+
         fetchWeatherData()
 
-        return ()=>fetchWeatherData()
+        return () => fetchWeatherData()
     }, [])
 
     return (
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
-                    <h1 className='fs-1 fw-bold text-center mb-3'>Weather</h1>
-                    <h4>Details:</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <h4>Instructions:</h4>
-                    <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
+                    <h1 className='fs-1 fw-bold text-center mb-3'>Weather - User Guide</h1>
+                    <p>The Weather Feature allows users to easily search for and access comprehensive weather reports for any location. This feature provides real-time information, including current temperature, feels-like temperature, wind speed, humidity, visibility, and atmospheric pressure.</p>
+
+                    <h4>Key Features:</h4>
+                    <p>Location Search: Users can search for any location to get up-to-date weather information.</p>
+                    <p>Detailed Weather Report: View essential weather details such as:</p>
+                    <p>Current temperature</p>
+                    <p>Feels-like temperature</p>
+                    <p>Wind speed</p>
+                    <p>Humidity levels</p>
+                    <p>Visibility range</p>
+                    <p>Atmospheric pressure</p>
+
+                    <h4>How to Use the Weather:</h4>
+                    <h5>Access the Weather Section:</h5>
+
+                    <p>Navigate to the "Weather" feature on the application’s main interface.</p>
+                    <h5>Search for a Location:</h5>
+
+                    <p>Step 1: Enter the city or location name in the search bar provided.</p>
+                    <p>Step 2: Click the "Search" button to retrieve the weather report for the specified location.</p>
+                    <h5>Viewing the Weather Report:</h5>
+
+                    <p>Once a location is searched, the following details will be displayed:</p>
+                    <p>Current Temperature: The exact temperature in the selected location.</p>
+                    <p>Feels Like: What the temperature feels like based on factors like humidity and wind.</p>
+                    <p>Wind Speed: The speed of the wind in the area, typically measured in kilometers or miles per hour.</p>
+                    <p>Humidity: The percentage of humidity in the air.</p>
+                    <p>Visibility: How far ahead the air is clear enough to see, usually measured in kilometers or miles.</p>
+                    <p>Pressure: The atmospheric pressure in the area, measured in hPa (hectopascals).</p>
+                    <h5>Additional Features:</h5>
+
+                    <p>The weather report is updated in real-time to provide users with the most accurate and current data.</p>
+                    <p>You can search for multiple locations and compare the weather across regions.</p>
+
+                    <p>This Weather Feature serves as a reliable source for users to monitor weather conditions, plan their day, or track changes in the environment with ease and precision.</p>
                 </div>
                 <div className='col-md-6 p-4 rounded border border-secondary border-top-0 border-bottom-0 border-end-0 text-dark' style={{ background: 'aliceblue' }}>
                     <div className='row g-3 justify-content-end mb-4'>

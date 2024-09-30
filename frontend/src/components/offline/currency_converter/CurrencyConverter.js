@@ -58,28 +58,31 @@ const CurrencyConverter = (props) => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-6 border border-secondary border-top-0 border-bottom-0 border-start-0 px-5 py-3'>
-                    <h1 className='fs-1 fw-bold text-center mb-3'>Currency Converter</h1>
-                    <h4>Details:</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <h4>Instructions:</h4>
-                    <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
+                    <h1 className='fs-1 fw-bold text-center mb-3'>Currency Converter - User Guide</h1>
+                    <p>The Currency Converter feature allows users to easily convert between different currencies and check live exchange rates. This tool is ideal for travelers, international shoppers, or anyone dealing with foreign currencies. Below are the detailed instructions for using the currency converter:</p>
+
+                    <h4>Key Features:</h4>
+                    <p>- Select Two Currencies: Users can choose two currencies, one for conversion and one for the target, from a wide range of available options.</p>
+                    <p>- Input Amount: Enter the amount in the base currency that you wish to convert.</p>
+                    <p>- Real-Time Exchange Rates: The feature provides live and accurate exchange rates to give users an up-to-date conversion result.</p>
+
+                    <h4>How to Use the Currency Converter Feature:</h4>
+                    <h5>1. Access the Currency Converter Section:</h5>
+                    <p>- Navigate to the "Currency Converter" feature in the application.</p>
+
+                    <h5>2. Performing a Conversion:</h5>
+                    <p>- Select the Base Currency (the currency you are converting from) from the provided dropdown menu.</p>
+                    <p>- Select the Target Currency (the currency you want to convert to) from the dropdown menu.</p>
+                    <p>- Enter the Amount of the base currency in the input field (e.g., 100 USD).</p>
+                    <p>- Click the "Convert" button to see the equivalent amount in the target currency.</p>
+
+                    <h5>3. Viewing the Conversion Result:</h5>
+                    <p>- The conversion result will be displayed instantly, showing the equivalent value of the target currency based on the entered amount and current exchange rate.</p>
+
+                    <h5>4. Live Exchange Rates:</h5>
+                    <p>- The exchange rates are fetched in real-time from reliable sources, ensuring that you always get the most accurate conversion information.</p>
+
+                    <p>This feature is a powerful tool for anyone who needs to make quick currency conversions with up-to-date exchange rates, making it easy to calculate foreign prices, budgets, or transfers.</p>
                 </div>
                 <div className='col-md-6 text-container'>
                     <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
