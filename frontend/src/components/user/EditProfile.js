@@ -60,7 +60,7 @@ function EditProfile(props) {
     const authCheck = () => {
         const toolbox = JSON.parse(localStorage.getItem("toolbox"));
 
-        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
+        if (toolbox?.auth?.token !== '' && toolbox?.auth?.isToken === '') {
             navigate('/unlock')
         }
     }
