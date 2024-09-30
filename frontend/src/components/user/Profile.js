@@ -24,7 +24,7 @@ function Profile(props) {
                 <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={() => navigate('/set-profile-lock')}>Set Profile Lock</button>
                 <button className='btn btn-primary rounded-pill mx-2 mb-2' onClick={resetProfile}>Reset Profile</button>
             </div>
-            {auth.isToken !== '' ?
+            {auth?.isToken !== '' ?
                 <div className='mb-3'>
                     <button className='btn btn-dark rounded-pill mb-2' onClick={lockProfile}>Lock Profile</button>
                 </div> : ''}
