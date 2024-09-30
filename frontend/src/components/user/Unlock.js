@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function Unlock() {
+function Unlock(props) {
+    const {auth, setAuth} = props
+
     const navigate = useNavigate()
 
     const [pin, setPin] = useState('')
@@ -10,13 +12,13 @@ function Unlock() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
-
         if (pin !== '') {
-            if (toolbox.auth.token === pin) {
-                toolbox.auth.isToken = pin
-                localStorage.setItem('toolbox', JSON.stringify(toolbox))
-                navigate('/')
+            let tAuth = auth
+
+            if (auth.token === pin) {
+                tAuth.isToken = pin
+                setAuth(tAuth)
+                navigate('/dashboard')
             } else {
                 setMessage("Something went wrong!")
             }
@@ -25,17 +27,11 @@ function Unlock() {
         }
     }
 
-    {/*const authCheck = () => {
-        const toolbox = JSON.parse(localStorage.getItem("toolbox"));
-
-        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
-            navigate('/unlock')
+    useEffect(()=>{
+        if(auth.isToken !== ''){
+            navigate('/dashboard')
         }
-    }
-
-    useEffect(() => {
-        authCheck()
-    }, [])*/}
+    },[])
 
     return (
         <div className='border rounded p-5 bg-light text-dark' style={{ margin: '3% 17%' }}>

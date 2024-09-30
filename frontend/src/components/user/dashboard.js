@@ -8,7 +8,7 @@ function Dashboard(props) {
     const authCheck = () => {
         const toolbox = JSON.parse(localStorage.getItem("toolbox"));
 
-        if (toolbox?.auth.token !== '' && toolbox?.auth.isToken === '') {
+        if (toolbox.auth.token !== '' && toolbox.auth.isToken === '') {
             navigate('/unlock')
         }
     }
@@ -21,7 +21,7 @@ function Dashboard(props) {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-5'>
-                    <Profile initToolbox={props.initToolbox} isAvailable={props.isAvailable} setIsAvailable={props.setIsAvailable} auth={props.auth} setAuth={props.setAuth} />
+                    <Profile initToolbox={props.initToolbox} isAvailable={props.isAvailable} setIsAvailable={props.setIsAvailable} auth={props.auth} setAuth={props.setAuth} resetProfile={props.resetProfile} />
                 </div>
                 <div className='col-md-7'>
                     <div className='row border rounded my-3 px-5 pt-3 pb-3 text-dark' style={{background: "#94d78a"}}>

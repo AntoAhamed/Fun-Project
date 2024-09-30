@@ -22,7 +22,7 @@ function Weather() {
             })
             .catch(error => {
                 console.error('Error fetching weather data:', error);
-                alert("Error fetching weather data. Please try again later.");
+                //alert("Error fetching weather data. Please try again later.");
                 fetchWeatherData();
             });
     }
@@ -41,6 +41,8 @@ function Weather() {
         authCheck()
         
         fetchWeatherData()
+
+        return ()=>fetchWeatherData()
     }, [])
 
     return (
