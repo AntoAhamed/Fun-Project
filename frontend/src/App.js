@@ -7,23 +7,13 @@ import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 
-import Alarm from './components/offline/alarm/Alarm'
-import Clock from './components/offline/clock/Clock'
-import Stopwatch from './components/offline/stopwatch/Stopwatch'
-import Timer from './components/offline/timer/Timer'
-
-import Alert from './components/offline/notepad/Alert'
 import AddNotes from './components/offline/notepad/AddNotes'
 import YourNotes from './components/offline/notepad/Notes'
 import EditNotes from './components/offline/notepad/EditNotes'
 
-import Calculator from './components/offline/calculator/Calculator'
-
 import AddTodos from './components/offline/todolist/AddTodos'
 
 import Weather from './components/online/weather/Weather'
-
-import News from './components/online/news/News'
 
 import GuessNumber from './components/games/guessnumber/GuessNumber'
 import QuizGame from './components/games/quizgame/QuizGame'
@@ -31,12 +21,9 @@ import RokePaperScissors from './components/games/rockpaperscissors/RockPaperSci
 import SlidingPuzzle from './components/games/slidingpuzzle/SlidingPuzzle'
 import TicTacToe from './components/games/tictactoe/TicTacToe'
 
-import JokeGenerator from './components/online/joke/Joke'
-import QuoteGenerator from './components/online/quote/Quote'
 import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
 import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
 import Reminder from './components/offline/reminder/Reminder'
-import Calendar from './components/offline/calendar/Calendar'
 
 import Dashboard from './components/user/Dashboard'
 import EditProfile from './components/user/EditProfile'
@@ -161,7 +148,8 @@ function App() {
 
   useEffect(() => {
     if (alarmTime && time.toLocaleTimeString('en-GB').slice(0, 5) === alarmTime) {
-      setMessage("Time's up! Alarm is ringing.");
+      setAlarmTime("");
+      window.alert("Time's up! Alarm is ringing...");
     }
   }, [alarmTime, time]);
 
@@ -311,13 +299,6 @@ function App() {
   //Another
 
   //Notepad
-  /*let initNotes;
-  if (localStorage.getItem("notes") === null) {
-    initNotes = [];
-  } else {
-    initNotes = JSON.parse(localStorage.getItem("notes"));
-  }*/
-
   const [noteTitle, setNoteTitle] = useState('')
   const [noteDesc, setNoteDesc] = useState('')
   const [notes, setNotes] = useState(initToolbox.notes)
@@ -438,14 +419,6 @@ function App() {
 
 
   //Todolist
-  /*let initTodo;
-  if (localStorage.getItem("todos") === null) {
-    initTodo = [];
-  }
-  else {
-    initTodo = JSON.parse(localStorage.getItem("todos"));
-  }*/
-
   const [todoTitle, setTodoTitle] = useState('');
   const [todoDesc, setTodoDesc] = useState('');
 
@@ -630,7 +603,6 @@ function App() {
             <Route path='/currency-converter' element={<CurrencyConverter mode={mode} />} />
 
             <Route path='/weather' element={<Weather />} />
-            {/*<Route path='/news' element={<News />} />*/}
 
             <Route path='/guess-number' element={<GuessNumber coins={coins} setCoins={setCoins} />} />
             <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />

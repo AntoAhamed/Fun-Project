@@ -86,40 +86,42 @@ function Weather() {
 
                     <p>This Weather Feature serves as a reliable source for users to monitor weather conditions, plan their day, or track changes in the environment with ease and precision.</p>
                 </div>
-                <div className='col-md-6 p-4 rounded border border-secondary border-top-0 border-bottom-0 border-end-0 text-dark' style={{ background: 'aliceblue' }}>
-                    <div className='row g-3 justify-content-end mb-4'>
-                        <div className='col-auto'>
-                            <input
-                                className='form-control'
-                                type='text'
-                                value={location}
-                                onChange={(e) => setLocation(e.target.value)}
-                                placeholder='Enter location to search'
-                            />
+                <div className='col-md-6'>
+                    <div className='p-4 rounded text-dark' style={{ background: 'aliceblue' }}>
+                        <div className='row g-3 justify-content-end mb-4'>
+                            <div className='col-auto'>
+                                <input
+                                    className='form-control'
+                                    type='text'
+                                    value={location}
+                                    onChange={(e) => setLocation(e.target.value)}
+                                    placeholder='Enter location to search'
+                                />
+                            </div>
+                            <div className='col-auto'>
+                                <button className='btn btn-primary rounded-pill' onClick={() => fetchWeatherData(location)}>Search</button>
+                            </div>
+                            <hr />
                         </div>
-                        <div className='col-auto'>
-                            <button className='btn btn-primary rounded-pill' onClick={() => fetchWeatherData(location)}>Search</button>
-                        </div>
-                        <hr />
-                    </div>
-                    <div className='p-2'>
-                        <h1 className='fs-1 fw-semibold'>Current Weather</h1>
-                        <p className='fs-3'>Weather in <u>{currentData.location?.name}</u></p>
-                        <p className='fs-4'>{currentData.location?.localtime}</p>
-                        <div className='row d-flex justify-content-center align-items-center text-center'>
-                            <div className='col-md-6 text-decoration-underline fw-bold' style={{ fontSize: '4.2rem' }}>{currentData.current?.temp_c}°C</div>
-                            <div className='col-md-6 p-4'>
-                                <div className='border border-5 rounded-circle m-5 p-5'>
-                                    <p>{currentData.current?.condition.text}</p>
-                                    <p>Feelslike: <u>{currentData.current?.feelslike_c || 'loading...'}°C</u></p>
+                        <div className='p-2'>
+                            <h1 className='fs-1 fw-semibold'>Current Weather</h1>
+                            <p className='fs-3'>Weather in <u>{currentData.location?.name}</u></p>
+                            <p className='fs-4'>{currentData.location?.localtime}</p>
+                            <div className='row d-flex justify-content-center align-items-center text-center'>
+                                <div className='col-md-6 text-decoration-underline fw-bold' style={{ fontSize: '4.2rem' }}>{currentData.current?.temp_c}°C</div>
+                                <div className='col-md-6 p-4'>
+                                    <div className='border border-5 rounded-circle m-5 p-5'>
+                                        <p>{currentData.current?.condition.text}</p>
+                                        <p>Feelslike: <u>{currentData.current?.feelslike_c || 'loading...'}°C</u></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='row mt-3'>
-                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Wind Speed: {currentData.current?.wind_kph}km/h</p>
-                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Humidity: {currentData.current?.humidity}%</p>
-                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Visibility: {currentData.current?.vis_km}km</p>
-                            <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Pressure: {currentData.current?.pressure_mb}mb</p>
+                            <div className='row mt-3'>
+                                <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Wind Speed: {currentData.current?.wind_kph}km/h</p>
+                                <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Humidity: {currentData.current?.humidity}%</p>
+                                <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Visibility: {currentData.current?.vis_km}km</p>
+                                <p className='col-md-auto border border-3 rounded text-center m-2 p-2'>Pressure: {currentData.current?.pressure_mb}mb</p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,7 @@ const CGPACalculator = (props) => {
                     <p>- Click the "Add Course" button to save the course information.</p>
 
                     <h5>3. Calculating CGPA:</h5>
-                    <p>- Once you have added all the courses for the semester, the calculator will automatically compute the CGPA based on your grades and credit hours.</p>
+                    <p>- After you have added all the courses for the semester, click the "Calculate CGPA" button to compute the CGPA based on your grades and credit hours.</p>
                     <p>- The formul used is: </p>
                     <p>- Repeat the process for multiple semesters to get an accurate overall CGPA</p>
 
@@ -83,7 +83,7 @@ const CGPACalculator = (props) => {
                     <div className={`border border-5 rounded text-center feature-card bg-${mode}`}>
                         <div className='d-flex flex-column align-items-center mt-4'>
                             <h1 className='fs-1 fw-bold mb-4'>CGPA Calculator</h1>
-                            <table class="table border border-secondary">
+                            <table className="table border border-secondary">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>

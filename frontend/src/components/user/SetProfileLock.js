@@ -70,7 +70,7 @@ function SetProfileLock(props) {
                     <input className='form-control' type='password' value={newPin} onChange={(e) => setNewPin(e.target.value)} placeholder='Enter New PIN' maxLength={'5'} />
                 </div>
                 <p className='fs-6 text-danger'>{message}</p>
-                <p className='fs-6 text-warning'>! After you confirm PIN, You need it to unlock your toolbox.</p>
+                <p className='fs-6 text-warning'>After you confirm PIN, You need it to unlock your toolbox.</p>
                 <button type='submit' className='btn btn-success rounded-pill mb-2'>Confirm</button>
                 <button className='btn btn-dark rounded-pill mb-2 mx-2' onClick={handleCancel}>Cancel</button>
             </form>

@@ -25,24 +25,30 @@ const QuizGame = (props) => {
                     <h1 className='fs-1 fw-bold text-center mb-3'>Eazy Quiz</h1>
                     <h4>Details:</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        This is a quiz type game. The rules are very simple. You have to answer some questions to win. As simple as that. But here is a small twist.
+                        There is no reward or penalty. So play as much as you want. To know about the reward system go to <b>Dashboard</b>.
                     </p>
                     <h4>Rules:</h4>
                     <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        1. At first someone have to set the questions. Enter questions one by one and click <b>Add Question</b> to add questions.
                     </p>
                     <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        2. Once all questions are set then click <b>Start Quiz</b> to start the quiz.
                     </p>
                     <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        3. If you don't want to set questions, simply click <b>Star Quiz</b> without adding or removing any questions to play quiz with default questions.
                     </p>
                     <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        4. Click <b>Reset Questions</b> to reset quiz settings.
                     </p>
                     <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        5. You can also remove questions one by one.
+                    </p>
+                    <p>
+                        6. There are 3 default questions.
+                    </p>
+                    <p>
+                        7. Your score will be shown at the end of the quiz.
                     </p>
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>

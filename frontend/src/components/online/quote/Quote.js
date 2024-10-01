@@ -93,8 +93,8 @@ const QuoteGenerator = (props) => {
     return (
         <div className={`border border-5 rounded text-center feature-card bg-${props.mode}`}>
             <h3 className='fs-3 fw-bold mb-3'>Quote</h3>
-            <p class="mb-3">"{quote}"</p>
-            <p class="mb-3"> - {author}</p>
+            <p className="mb-3">"{quote}"</p>
+            <p className="mb-3"> - {author}</p>
             <button className='btn btn-sm btn-primary rounded-pill mb-3' onClick={fetchQuote}>Get New Quote</button>
         </div>
     );

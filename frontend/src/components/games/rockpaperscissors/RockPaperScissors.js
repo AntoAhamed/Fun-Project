@@ -51,24 +51,21 @@ const RockPaperScissors = (props) => {
                     <h1 className='fs-1 fw-bold text-center mb-3'>Rock Paper Scissors</h1>
                     <h4>Details:</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        This is a rock paper scissors game. The rules are very simple. There are two players: You and Computer(System). Click your choice from the 3 options. As simple as that. But here is a small twist.
+                        If you win, you'll get reward otherwise you'll have to give penalty. To know about the reward system go to <b>Dashboard</b>.
                     </p>
                     <h4>Rules:</h4>
                     <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        1. Click your choice and see the result.
                     </p>
                     <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        2. If you won, you'll get reward of 5 Pt and if lose, you'll lose 1.25 Pt as penalty.
                     </p>
                     <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        3. There is on limit. You can play as much as you want.
                     </p>
                     <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        4. Remember one more thing that it is one of the ways you can get reward from.
                     </p>
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>

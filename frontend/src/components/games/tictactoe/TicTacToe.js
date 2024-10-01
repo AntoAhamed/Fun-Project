@@ -61,24 +61,18 @@ const TicTacToe = () => {
                     <h1 className='fs-1 fw-bold text-center mb-3'>Tic Tac Toe</h1>
                     <h4>Details:</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        This is a tic tac toe game. The rules are very simple. But here is a small twist.
+                        There is no reward or penalty. So play as much as you want. To know about the reward system go to <b>Dashboard</b>.
                     </p>
                     <h4>Rules:</h4>
                     <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        1. There are 2 players: X and O. This time players need to be real (Human).
                     </p>
                     <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        2. They have to enter Choose their symbols first. Then enter one by one by following the direction of the game. (Next Player: X/O)
                     </p>
                     <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        3. After a result, players can reset the game and can play again and again.
                     </p>
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>

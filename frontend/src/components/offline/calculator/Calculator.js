@@ -37,7 +37,7 @@ const Calculator = (props) => {
                             </div>
                             <div style={styles.buttons}>
                                 <button onClick={clearInput} style={styles.button}>C</button>
-                                <button onClick={currectInput} style={styles.button}>del</button>
+                                <button onClick={currectInput} style={styles.button}>DEL</button>
                                 <button onClick={clearInput} style={styles.button}>CE</button>
                                 <button onClick={() => handleClick('/')} style={styles.button}>/</button>
                                 <button onClick={() => handleClick('7')} style={styles.button}>7</button>

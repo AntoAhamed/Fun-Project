@@ -95,7 +95,7 @@ const Calendar = (props) => {
 
     return (
         <div>
-            <div className="container border border-3 border-secondary rounded" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
+            <div className="container pt-1 pb-1 rounded" style={{background: `${mode === "light" ? "#bed4e9" : "#0d1a26"}`}}>
                 {renderHeader()}
                 <div className='border border-light text-dark mb-2' style={{ background: 'aliceblue' }}>
                     {renderDays()}

@@ -28,37 +28,37 @@ function Dashboard(props) {
                         <h1 className='fs-2 fw-bold'>Dashboard</h1>
                         <hr />
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Alarm</div>
                                 <div className='fs-3'>{props.alarmTime === "" ? "Off" : "On"}</div>
                             </div>
                         </div>
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Stopwatch</div>
                                 <div className='fs-3'>{props.isRunning ? "On" : "Off"}</div>
                             </div>
                         </div>
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Timer</div>
                                 <div className='fs-3'>{props.isTimerRunning ? "On" : "Off"}</div>
                             </div>
                         </div>
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Notes</div>
                                 <div className='fs-3'>{props.initToolbox.notes?.length}</div>
                             </div>
                         </div>
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Todos</div>
                                 <div className='fs-3'>{props.initToolbox.todos?.length}</div>
                             </div>
                         </div>
                         <div className='col-md-4 mb-3'>
-                            <div className='d-flex justify-content-around rounded px-3 py-5' style={{background: "aliceblue"}}>
+                            <div className='d-flex justify-content-around rounded px-3 py-5 text-secondary' style={{background: "aliceblue"}}>
                                 <div className='fs-3'>Reminders</div>
                                 <div className='fs-3'>{props.initToolbox.reminders?.length}</div>
                             </div>

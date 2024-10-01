@@ -29,10 +29,10 @@ const GuessNumber = (props) => {
 
     const handlePlayAgain = () => {
         setTargetNumber(Math.floor(Math.random() * 10) + 1)
-        setMessage('')
         setFinished(false)
         setChances(3)
         setGuess('')
+        setMessage('You have 1 try & 3 chances.')
     }
 
     const navigate = useNavigate()
@@ -58,17 +58,24 @@ const GuessNumber = (props) => {
                     <h1 className='fs-1 fw-bold text-center mb-3'>Guess The Number</h1>
                     <h4>Details:</h4>
                     <p>
-                        This is a gussing the number game. System has already think a between 1 to 10 number. Now it's your turn to guess the number. If you would guess the right number, You win.
+                        This is a gussing the number game. The rules are very simple. System would think a number between 1 to 10 number and you have to guess the number. As simple as that. If you can guess the right number then you'll win. But here is a small twist.
+                        If you win, you'll get reward otherwise you'll have to give penalty. To know about the reward system go to <b>Dashboard</b>.
                     </p>
                     <h4>Rules:</h4>
                     <p>
-                        1. You have 1 try and 3 chances to guess that number.
+                        1. You have 1 try chance and main 3 chances to guess that number.
                     </p>
                     <p>
                         2. It can be any number between (1 to 10). No clue will be given.
                     </p>
                     <p>
-                        3. If you won, you will get reward of 5 Pt and if loose, you will lose 1.25 Pt.
+                        3. If you won, you'll get reward of 5 Pt and if lose, you'll lose 1.25 Pt as penalty.
+                    </p>
+                    <p>
+                        4. You can play again and again. As you wish.
+                    </p>
+                    <p>
+                        5. Remember one more thing that it is one of the ways you can get reward from.
                     </p>
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>

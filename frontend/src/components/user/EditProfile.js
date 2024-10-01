@@ -87,8 +87,8 @@ function EditProfile(props) {
                     <textarea className='form-control' rows={'3'} value={editedBio} onChange={(e) => setEditedBio(e.target.value)} placeholder='Enter Bio' />
                 </div>
                 <div className='mb-3'>
-                    <label for="formFile" class="form-label">Choose Image</label>
-                    <input class="form-control" type="file" id="formFile" accept=".png, .jpg, .jpeg" onChange={handleImageChange} />
+                    <label htmlFor="formFile" className="form-label">Choose Image</label>
+                    <input className="form-control" type="file" id="formFile" accept=".png, .jpg, .jpeg" onChange={handleImageChange} />
                 </div>
                 <button type='submit' className='btn btn-success rounded-pill mb-2'>Save</button>
                 <button className='btn btn-dark rounded-pill mb-2 mx-2' onClick={handleCancel}>Cancel</button>

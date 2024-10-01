@@ -46,24 +46,24 @@ const SlidingPuzzle = () => {
                     <h1 className='fs-1 fw-bold text-center mb-3'>Sliding Puzzle</h1>
                     <h4>Details:</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        This is a puzzle solving game. The rules are very simple. You have to solve the puzzle according to the following rules. As simple as that. But here is a small twist.
+                        There is no reward or penalty. So play as much as you want. To know about the reward system go to <b>Dashboard</b>.
                     </p>
                     <h4>Rules:</h4>
                     <p>
-                        1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        1. A sliding puzzle is given. You have to sort this like this...
+                        <pre className='text-center fs-3'>
+                            <div>1 2 3</div>
+                            <div>4 5 6</div>
+                            <div>7 8 X</div>
+                        </pre>
+                        Here, <b>X</b> represents the gray slide.
                     </p>
                     <p>
-                        2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        2. You can shuffle the puzzle by clicking <b>Shuffle</b> button, if you want.
                     </p>
                     <p>
-                        3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
-                    </p>
-                    <p>
-                        5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem incidunt ipsam eos eum minus id similique iure nisi quam perspiciatis nihil doloremque accusamus, voluptate ullam ad doloribus fuga numquam praesentium!
+                        3. Play as much as you wish.
                     </p>
                     <p className='fs-4 fw-bold text-center'>Best of Luck</p>
                 </div>

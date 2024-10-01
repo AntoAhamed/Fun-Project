@@ -106,8 +106,8 @@ const Navbar = (props) => {
             <nav className="navbar navbar-expand-md">
                 <div className="container-fluid">
                     <div className={`fs-2 fw-bold text-${mode} mx-4`}>ToolBox</div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse p-2" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
@@ -120,51 +120,51 @@ const Navbar = (props) => {
                             <li className="nav-item">
                                 <Link className={`nav-link text-${mode} ${contactActive}`} onClick={activateContact} to="/contact">Contact</Link>
                             </li>
-                            <li class="nav-item dropdown">
-                                <Link class={`nav-link text-${mode} ${offlineActive} dropdown-toggle`} onClick={activateOffline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <Link className={`nav-link text-${mode} ${offlineActive} dropdown-toggle`} onClick={activateOffline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Toolbox
                                 </Link>
-                                <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/reminder">Reminder</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
-                                    <li><Link class="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/write-notes">Add Notes</Link></li>
-                                    <li><Link class="dropdown-item" to="/notes">Your Notes</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/todos">Todos List</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/weather">Weather</Link></li>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/reminder">Reminder</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/currency-converter">Currency Converter</Link></li>
+                                    <li><Link className="dropdown-item" to="/cgpa-calculator">CGPA Calculator</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/write-notes">Add Notes</Link></li>
+                                    <li><Link className="dropdown-item" to="/notes">Your Notes</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/todos">Todos List</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/weather">Weather</Link></li>
                                 </ul>
                             </li>
-                            {/*<li class="nav-item dropdown">
-                                <Link class={`nav-link text-${mode} ${onlineActive} dropdown-toggle`} onClick={activateOnline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {/*<li className="nav-item dropdown">
+                                <Link className={`nav-link text-${mode} ${onlineActive} dropdown-toggle`} onClick={activateOnline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Online Toolbox
                                 </Link>
-                                <ul class="dropdown-menu">
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/news">News</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/affirmation">Affirmation</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/fact">Fact</Link></li>
+                                <ul className="dropdown-menu">
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/news">News</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/affirmation">Affirmation</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/fact">Fact</Link></li>
                                 </ul>
                             </li>*/}
-                            <li class="nav-item dropdown">
-                                <Link class={`nav-link text-${mode} ${gameActive} dropdown-toggle`} onClick={activateGame} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <Link className={`nav-link text-${mode} ${gameActive} dropdown-toggle`} onClick={activateGame} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Games
                                 </Link>
-                                <ul class="dropdown-menu">
-                                    <li><Link class="dropdown-item" to="/guess-number">Guess Number</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/puzzle">Sliding Puzzle</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/quiz">Eazy Quiz</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/roke-paper-scissors">Roke Paper Scissors</Link></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><Link class="dropdown-item" to="/tic-tac-toe">Tic Tac Toe</Link></li>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/guess-number">Guess Number</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/puzzle">Sliding Puzzle</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/quiz">Eazy Quiz</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/roke-paper-scissors">Roke Paper Scissors</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/tic-tac-toe">Tic Tac Toe</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
@@ -175,9 +175,9 @@ const Navbar = (props) => {
                             <img src={Coin} alt='' style={{width: '25px'}} />
                             <div className='fs-5 fw-bold mx-2'>{coins} Pt</div>
                         </div>
-                        <div class="form-check form-switch fs-5">
-                            <input class="form-check-input" onClick={changeMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                            <label class={`form-check-label text-${mode}`} for="flexSwitchCheckDefault">{mode === "dark" ? "Dark" : "Light"}</label>
+                        <div className="form-check form-switch fs-5">
+                            <input className="form-check-input" onClick={changeMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                            <label className={`form-check-label text-${mode}`} htmlFor="flexSwitchCheckDefault">{mode === "dark" ? "Dark" : "Light"}</label>
                         </div>
                     </div>
                 </div>
