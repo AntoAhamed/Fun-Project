@@ -68,56 +68,56 @@ function App() {
   const [isAvailable, setIsAvailable] = useState(initToolbox.isAvailable)
   const [auth, setAuth] = useState(initToolbox.auth)
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.name = name;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[name])
+  }, [name])
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.bio = bio;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[bio])
+  }, [bio])
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.image = image;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[image])
+  }, [image])
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.coins = coins;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[coins])
+  }, [coins])
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.isAvailable = isAvailable;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[isAvailable?.edit][isAvailable?.lock])
+  }, [isAvailable?.edit, isAvailable?.lock])
 
-  useEffect(()=>{
+  useEffect(() => {
     initToolbox.auth = auth;
     localStorage.setItem('toolbox', JSON.stringify(initToolbox));
-  },[auth?.token][auth?.isToken])
+  }, [auth?.token][auth?.isToken])
 
   const resetProfile = () => {
-      setName('Guest')
-      setBio('')
-      setImage('')
-      setCoins(1000)
-      setNotes([])
-      setQuestions([])
-      setReminders([])
-      setTodos([])
-      setIsAvailable({
-        edit: 0,
-        lock: 0,
-      })
-      setAuth({
-        token: '',
-        isToken: '',
-      })
+    setName('Guest')
+    setBio('')
+    setImage('')
+    setCoins(1000)
+    setNotes([])
+    setQuestions([])
+    setReminders([])
+    setTodos([])
+    setIsAvailable({
+      edit: 0,
+      lock: 0,
+    })
+    setAuth({
+      token: '',
+      isToken: '',
+    })
 
-      setAlertMssg("Profile Reseted.");
-      alertSystem();
+    setAlertMssg("Profile Reseted.");
+    alertSystem();
   }
 
 
