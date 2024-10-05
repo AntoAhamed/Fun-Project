@@ -421,9 +421,10 @@ function App() {
   //Todolist
   const [todoTitle, setTodoTitle] = useState('');
   const [todoDesc, setTodoDesc] = useState('');
+  const [todoPriority, setTodoPriority] = useState('');
 
   const addTodo = () => {
-    if (todoTitle.length > 0 && todoDesc.length > 0) {
+    if (todoTitle.length > 0 && todoDesc.length > 0 && todoPriority.length > 0) {
       let sno;
       if (todos.length === 0) {
         sno = 0;
@@ -434,7 +435,8 @@ function App() {
       let myTodo = {
         sno: sno + 1,
         title: todoTitle,
-        desc: todoDesc
+        desc: todoDesc,
+        priority: todoPriority,
       }
 
       setTodos([...todos, myTodo]);
@@ -445,7 +447,7 @@ function App() {
       alertSystem();
     }
     else {
-      setAlertMssg("Title or Description can't be blank");
+      setAlertMssg("Any field can't be blank");
       alertSystem();
     }
   }
@@ -596,7 +598,7 @@ function App() {
             <Route path="/notes" element={<YourNotes notes={notes} deleteNotes={deleteNotes} editNotes={editNotes} time={time} />} />
             <Route path="/edit-notes" element={<EditNotes toEditNote={toEditNote} newTitle={newTitle} newDesc={newDesc} setNewTitle={setNewTitle} setNewDesc={setNewDesc} save={save} clear={clear} time={time} />} />
 
-            <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} setTitle={setTodoTitle} setDesc={setTodoDesc} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
+            <Route path='/todos' element={<AddTodos title={todoTitle} desc={todoDesc} priority={todoPriority} setTitle={setTodoTitle} setDesc={setTodoDesc} setPriority={setTodoPriority} addTodo={addTodo} todos={todos} onDelete={onDelete} />} />
 
             <Route path='/cgpa-calculator' element={<CGPACalculator mode={mode} />} />
 

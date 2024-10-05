@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 function AddTodos(props) {
     const navigate = useNavigate()
 
+    const priority = ["Low", "Medium", "High"]
+
     const authCheck = () => {
         const toolbox = JSON.parse(localStorage.getItem("toolbox"));
 
@@ -32,6 +34,16 @@ function AddTodos(props) {
                         <form className='py-4 px-4 border rounded border-2'>
                             <div className="mb-3">
                                 <input type="text" className="form-control" id="title" value={props.title} onChange={(e) => { props.setTitle(e.target.value) }} placeholder='Enter Todo Title' />
+                            </div>
+                            <div className='mb-3'>
+                                <select className='form-select mb-2' onChange={(e) => props.setPriority(e.target.value)}>
+                                    <option value={''}>Select Priority</option>
+                                    {priority.map((priority) => (
+                                        <option key={priority} value={priority}>
+                                            {priority}
+                                        </option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="mb-3">
                                 <textarea className="form-control" id="desc" rows='5' value={props.desc} onChange={(e) => { props.setDesc(e.target.value) }} placeholder='Enter Todo Description' />
