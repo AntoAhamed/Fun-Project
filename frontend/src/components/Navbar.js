@@ -7,84 +7,6 @@ import Coin from '../assets/coin.png'
 const Navbar = (props) => {
     const { time, changeMode, mode, alert, alertMssg, coins } = props;
 
-    const [homeActive, setHomeActive] = useState("active");
-    const [aboutActive, setAboutActive] = useState(null);
-    const [contactActive, setContactActive] = useState(null);
-    const [offlineActive, setOfflineActive] = useState(null);
-    const [onlineActive, setOnlineActive] = useState(null);
-    const [gameActive, setGameActive] = useState(null);
-    const [dashboardActive, setDashboardActive] = useState(null);
-
-    const activateHome = () => {
-        setHomeActive("active")
-        setAboutActive(null)
-        setContactActive(null)
-        setOfflineActive(null)
-        setOnlineActive(null)
-        setGameActive(null)
-        setDashboardActive(null)
-    }
-
-    const activateAbout = () => {
-        setHomeActive(null)
-        setAboutActive("active")
-        setContactActive(null)
-        setOfflineActive(null)
-        setOnlineActive(null)
-        setGameActive(null)
-        setDashboardActive(null)
-    }
-
-    const activateContact = () => {
-        setHomeActive(null)
-        setAboutActive(null)
-        setContactActive("active")
-        setOfflineActive(null)
-        setOnlineActive(null)
-        setGameActive(null)
-        setDashboardActive(null)
-    }
-
-    const activateOffline = () => {
-        setHomeActive(null)
-        setAboutActive(null)
-        setContactActive(null)
-        setOfflineActive("active")
-        setOnlineActive(null)
-        setGameActive(null)
-        setDashboardActive(null)
-    }
-
-    const activateOnline = () => {
-        setHomeActive(null)
-        setAboutActive(null)
-        setContactActive(null)
-        setOfflineActive(null)
-        setOnlineActive("active")
-        setGameActive(null)
-        setDashboardActive(null)
-    }
-
-    const activateGame = () => {
-        setHomeActive(null)
-        setAboutActive(null)
-        setContactActive(null)
-        setOfflineActive(null)
-        setOnlineActive(null)
-        setGameActive("active")
-        setDashboardActive(null)
-    }
-
-    const activateDashboard = () => {
-        setHomeActive(null)
-        setAboutActive(null)
-        setContactActive(null)
-        setOfflineActive(null)
-        setOnlineActive(null)
-        setGameActive(null)
-        setDashboardActive("active")
-    }
-
     /*const navigate = useNavigate()
 
     const handleLogout = () => {
@@ -112,16 +34,16 @@ const Navbar = (props) => {
                     <div className="collapse navbar-collapse p-2" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-3">
                             <li className="nav-item">
-                                <Link className={`nav-link text-${mode} ${homeActive}`} onClick={activateHome} aria-current="page" to="/">Home</Link>
+                                <Link className={`nav-link text-${mode}`} aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link text-${mode} ${aboutActive}`} onClick={activateAbout} to="/about">About</Link>
+                                <Link className={`nav-link text-${mode}`} to="/about">About</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link text-${mode} ${contactActive}`} onClick={activateContact} to="/contact">Contact</Link>
+                                <Link className={`nav-link text-${mode}`} to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <Link className={`nav-link text-${mode} ${offlineActive} dropdown-toggle`} onClick={activateOffline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className={`nav-link text-${mode} dropdown-toggle`} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Toolbox
                                 </Link>
                                 <ul className="dropdown-menu">
@@ -138,21 +60,8 @@ const Navbar = (props) => {
                                     <li><Link className="dropdown-item" to="/weather">Weather</Link></li>
                                 </ul>
                             </li>
-                            {/*<li className="nav-item dropdown">
-                                <Link className={`nav-link text-${mode} ${onlineActive} dropdown-toggle`} onClick={activateOnline} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Online Toolbox
-                                </Link>
-                                <ul className="dropdown-menu">
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" to="/news">News</Link></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" to="/affirmation">Affirmation</Link></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><Link className="dropdown-item" to="/fact">Fact</Link></li>
-                                </ul>
-                            </li>*/}
                             <li className="nav-item dropdown">
-                                <Link className={`nav-link text-${mode} ${gameActive} dropdown-toggle`} onClick={activateGame} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className={`nav-link text-${mode} dropdown-toggle`} to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Games
                                 </Link>
                                 <ul className="dropdown-menu">
@@ -168,11 +77,11 @@ const Navbar = (props) => {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link text-${mode} ${dashboardActive}`} onClick={activateDashboard} aria-current="page" to="/dashboard">Dashboard</Link>
+                                <Link className={`nav-link text-${mode}`} aria-current="page" to="/dashboard">Dashboard</Link>
                             </li>
                         </ul>
                         <div className='mx-5 d-flex'>
-                            <img src={Coin} alt='' style={{width: '25px'}} />
+                            <img src={Coin} alt='' style={{ width: '25px' }} />
                             <div className='fs-5 fw-bold mx-2'>{coins} Pt</div>
                         </div>
                         <div className="form-check form-switch fs-5">

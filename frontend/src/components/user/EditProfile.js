@@ -11,7 +11,7 @@ function EditProfile(props) {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
 
-        const limit = 1 * 1024 * 1024;
+        const limit = 1 * 1024;
 
         if (file && file.size > limit) {
             alert("File size exceeds.")
@@ -87,7 +87,7 @@ function EditProfile(props) {
                     <textarea className='form-control' rows={'3'} value={editedBio} onChange={(e) => setEditedBio(e.target.value)} placeholder='Enter Bio' />
                 </div>
                 <div className='mb-3'>
-                    <label htmlFor="formFile" className="form-label">Choose Image</label>
+                    <label htmlFor="formFile" className="form-label">Choose Image <span className='text-secondary' style={{fontSize: '12px'}}>(Max size 1 MB)</span></label>
                     <input className="form-control" type="file" id="formFile" accept=".png, .jpg, .jpeg" onChange={handleImageChange} />
                 </div>
                 <button type='submit' className='btn btn-success rounded-pill mb-2'>Save</button>

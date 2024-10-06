@@ -12,12 +12,6 @@ body {
     margin-right: 5px;
 }
 
-/*
-.active {
-    font-style: italic;
-    border-bottom: 1px solid #E8E7D5;
-}*/
-
 .image-container {
     background-image: url('./assets/alarm.jpeg');
     background-size: cover;
