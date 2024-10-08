@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clock_img from '../../../assets/clock.jpeg'
 import { useNavigate } from 'react-router-dom';
 
 const CurrencyConverter = (props) => {

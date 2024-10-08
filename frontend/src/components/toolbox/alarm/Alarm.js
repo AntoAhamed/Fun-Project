@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clock_img from '../../../assets/clock.jpeg'
 
 const Alarm = (props) => {
     const { time, mode, alarmTime, setAlarmTime, message, setMessage, resetAlarm } = props;

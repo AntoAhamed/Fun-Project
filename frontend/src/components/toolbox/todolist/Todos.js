@@ -1,6 +1,5 @@
 import React from 'react'
 import Todo from './Todo'
-import todo_img from '../../../assets/todo.jpeg'
 
 function Todos(props) {
     return (

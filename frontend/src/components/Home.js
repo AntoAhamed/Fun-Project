@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import Alarm from './offline/alarm/Alarm';
-import Stopwatch from './offline/stopwatch/Stopwatch';
-import Timer from './offline/timer/Timer';
-import Calculator from './offline/calculator/Calculator';
-import Calendar from './offline/calendar/Calendar';
-import Quote from './online/quote/Quote'
-import Joke from './online/joke/Joke'
+import Alarm from './toolbox/alarm/Alarm';
+import Stopwatch from './toolbox/stopwatch/Stopwatch';
+import Timer from './toolbox/timer/Timer';
+import Calculator from './toolbox/calculator/Calculator';
+import Calendar from './toolbox/calendar/Calendar';
+import Quote from './toolbox/quote/Quote'
+import Joke from './toolbox/joke/Joke'
 import { useNavigate } from 'react-router-dom';
 
 function Home(props) {

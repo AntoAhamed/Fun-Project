@@ -7,13 +7,15 @@ import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 
-import AddNotes from './components/offline/notepad/AddNotes'
-import YourNotes from './components/offline/notepad/Notes'
-import EditNotes from './components/offline/notepad/EditNotes'
+import AddNotes from './components/toolbox/notepad/AddNotes'
+import YourNotes from './components/toolbox/notepad/Notes'
+import EditNotes from './components/toolbox/notepad/EditNotes'
 
-import AddTodos from './components/offline/todolist/AddTodos'
+import AddTodos from './components/toolbox/todolist/AddTodos'
 
-import Weather from './components/online/weather/Weather'
+import Weather from './components/toolbox/weather/Weather'
+
+import Location from './components/toolbox/location/Location'
 
 import GuessNumber from './components/games/guessnumber/GuessNumber'
 import QuizGame from './components/games/quizgame/QuizGame'
@@ -21,14 +23,15 @@ import RokePaperScissors from './components/games/rockpaperscissors/RockPaperSci
 import SlidingPuzzle from './components/games/slidingpuzzle/SlidingPuzzle'
 import TicTacToe from './components/games/tictactoe/TicTacToe'
 
-import CGPACalculator from './components/offline/cgpa_calculator/CGPACalculator'
-import CurrencyConverter from './components/offline/currency_converter/CurrencyConverter'
-import Reminder from './components/offline/reminder/Reminder'
+import CGPACalculator from './components/toolbox/cgpa_calculator/CGPACalculator'
+import CurrencyConverter from './components/toolbox/currency_converter/CurrencyConverter'
+import Reminder from './components/toolbox/reminder/Reminder'
 
 import Dashboard from './components/user/Dashboard'
 import EditProfile from './components/user/EditProfile'
 import SetProfileLock from './components/user/SetProfileLock'
 import Unlock from './components/user/Unlock'
+import Dictionary from './components/toolbox/dictionary/Dictionary'
 
 function App() {
   //Initialization
@@ -605,6 +608,10 @@ function App() {
             <Route path='/currency-converter' element={<CurrencyConverter mode={mode} />} />
 
             <Route path='/weather' element={<Weather />} />
+
+            {/*<Route path='/location' element={<Location />} />*/}
+
+            <Route path='/dictionary' element={<Dictionary />} />
 
             <Route path='/guess-number' element={<GuessNumber coins={coins} setCoins={setCoins} />} />
             <Route path='/quiz' element={<QuizGame questions={questions} currentQuestion={currentQuestion} score={score} started={started} finished={finished} question={question} setQuestion={setQuestion} option1={option1} setOption1={setOption1} option2={option2} setOption2={setOption2} option3={option3} setOption3={setOption3} option4={option4} setOption4={setOption4} answer={answer} setAnswer={setAnswer} handleAddQuestion={handleAddQuestion} handleRemoveQuestion={handleRemoveQuestion} handleAnswer={handleAnswer} handleReset={handleReset} handleResetQuestions={handleResetQuestions} handleSubmit={handleSubmit} />} />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clock_img from '../../../assets/clock.jpeg'
 
 const Timer = (props) => {
     const { mode, time, setTime, formatTime, startTimer, isRunning, stopTimer, resetTimer } = props;

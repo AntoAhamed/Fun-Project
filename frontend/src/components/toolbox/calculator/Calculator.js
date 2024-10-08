@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import clock_img from '../../../assets/clock.jpeg'
 
 const Calculator = (props) => {
     const {mode} = props;

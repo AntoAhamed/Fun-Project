@@ -12,14 +12,6 @@ body {
     margin-right: 5px;
 }
 
-.image-container {
-    background-image: url('./assets/alarm.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    /* Full height */
-}
-
 .text-container {
     display: flex;
     align-items: center;

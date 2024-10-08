@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import clock_img from '../../../assets/clock.jpeg'
 import { useNavigate } from 'react-router-dom'
 
 function Weather() {

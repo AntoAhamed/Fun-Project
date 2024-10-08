@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import clock_img from '../../../assets/clock.jpeg'
 
 const JokeGenerator = (props) => {
     const [joke, setJoke] = useState('Your joke will appare here.');

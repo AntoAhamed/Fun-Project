@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Outlet, Link, useNavigate } from 'react-router-dom'
-import Clock from './offline/clock/Clock'
-import Alert from './offline/notepad/Alert'
+import Clock from './toolbox/clock/Clock'
+import Alert from './toolbox/notepad/Alert'
 import Coin from '../assets/coin.png'
 
 const Navbar = (props) => {
@@ -58,6 +58,10 @@ const Navbar = (props) => {
                                     <li><Link className="dropdown-item" to="/todos">Todos List</Link></li>
                                     <li><hr className="dropdown-divider" /></li>
                                     <li><Link className="dropdown-item" to="/weather">Weather</Link></li>
+                                    {/*<li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/location">Location</Link></li>*/}
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><Link className="dropdown-item" to="/dictionary">Dictionary</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">

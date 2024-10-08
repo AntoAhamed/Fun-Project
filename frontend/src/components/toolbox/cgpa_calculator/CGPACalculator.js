@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InputForm from './InputForm';
 import Results from './Results';
-import clock_img from '../../../assets/clock.jpeg'
 import { useNavigate } from 'react-router-dom';
 
 const CGPACalculator = (props) => {
